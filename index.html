@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Инал Принц Тауэр — жилой комплекс в Гагре, ул. Абазгаа, 49</title>
-<meta name="description" content="Инал Принц Тауэр — современный жилой комплекс в Гагре по адресу ул. Абазгаа, 49. 7 этажей, коммерческая галерея на первом этаже, интерактивная 3D-модель, планировки и заявка через WhatsApp." />
+<title>Инал Принц Тауэр — премиум-квартиры у моря в Гагре, ул. Абазгаа, 49</title>
+<meta name="description" content="Инал Принц Тауэр — камерный жилой комплекс премиум-класса в Гагре, ул. Абазгаа, 49. 6 этажей, собственный паркинг, торговая галерея, панорамное остекление, интерактивная 3D-модель дома и планировки. Квартиры у моря с видом на горы — старт продаж." />
+<meta name="keywords" content="квартиры в Гагре, ЖК Гагра, недвижимость Абхазия, купить квартиру у моря, Инал Принц Тауэр, Абазгаа 49" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#0e0f10" />
-<meta property="og:title" content="Инал Принц Тауэр — жилой комплекс в Гагре" />
-<meta property="og:description" content="Современный жилой комплекс на ул. Абазгаа, 49. Панорамное остекление, коммерческий первый этаж, 3D-модель дома и каталог планировок." />
+<meta property="og:title" content="Инал Принц Тауэр — премиум-квартиры у моря в Гагре" />
+<meta property="og:description" content="6 этажей, собственный паркинг, торговая галерея и панорамное остекление на ул. Абазгаа, 49. Интерактивная 3D-модель дома, планировки и заявка в один клик." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="inal-prince-tower-7fl-view-01-corner-day.png" />
 <link rel="preload" as="image" href="inal-prince-tower-7fl-view-01-corner-day.png" />
@@ -21,7 +22,7 @@
   "@context": "https://schema.org",
   "@type": "ApartmentComplex",
   "name": "Инал Принц Тауэр",
-  "description": "Современный жилой комплекс в Гагре: 7 этажей, коммерческая галерея на первом этаже, панорамное остекление.",
+  "description": "Камерный жилой комплекс премиум-класса в Гагре: 6 этажей, собственный паркинг, коммерческая галерея на первом этаже, панорамное остекление, виды на море и горы.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ул. Абазгаа, 49",
@@ -489,7 +490,8 @@
   .model-ui {
     position: absolute; z-index: 4;
     left: 50%; bottom: 22px; transform: translateX(-50%);
-    display: flex; gap: 8px;
+    display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
+    max-width: calc(100% - 28px);
     background: rgba(12, 13, 14, .55);
     border: 1px solid var(--line-dark);
     backdrop-filter: blur(12px);
@@ -501,10 +503,31 @@
     border: 0; cursor: pointer;
     background: transparent; color: rgba(255, 255, 255, .66);
     font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-    padding: 10px 18px; border-radius: 999px;
+    padding: 10px 16px; border-radius: 999px;
     transition: background .35s, color .35s;
   }
   .model-ui button.active, .model-ui button:hover { background: var(--gold-2); color: #171307; }
+  .model-light {
+    position: absolute; z-index: 4;
+    right: clamp(16px, 4vw, 44px); top: 22px;
+    display: flex; gap: 4px;
+    background: rgba(12, 13, 14, .55);
+    border: 1px solid var(--line-dark);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px; padding: 4px;
+  }
+  .model-light button {
+    border: 0; cursor: pointer;
+    background: transparent; color: rgba(255, 255, 255, .66);
+    font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    padding: 8px 14px; border-radius: 999px;
+    transition: background .35s, color .35s;
+  }
+  .model-light button.active, .model-light button:hover { background: var(--gold-2); color: #171307; }
+  @media (max-width: 640px) {
+    .model-light { top: auto; bottom: 76px; right: 50%; transform: translateX(50%); }
+    .model-ui button { padding: 9px 13px; font-size: 10px; letter-spacing: .08em; }
+  }
   .model-note {
     position: absolute; z-index: 4;
     left: clamp(16px, 4vw, 44px); top: 24px;
@@ -819,6 +842,35 @@
     footer { padding-bottom: 100px; }
   }
 
+  /* Преимущества */
+  .adv {
+    margin-top: clamp(48px, 7vw, 96px);
+    border-top: 1px solid var(--line-light);
+    padding-top: clamp(40px, 5vw, 72px);
+  }
+  .adv-head { display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 48px); }
+  .adv-head h3 { font-family: var(--font-display); font-weight: 500; font-size: clamp(26px, 3.4vw, 44px); letter-spacing: 0.01em; line-height: 1.05; max-width: 15ch; }
+  .adv-head span { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #9a7c3c; }
+  .adv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-light); border: 1px solid var(--line-light); }
+  .adv-card {
+    background: var(--paper); padding: clamp(26px, 2.6vw, 40px);
+    display: flex; flex-direction: column; gap: 14px;
+    transition: background .5s, transform .5s;
+  }
+  .adv-card:hover { background: var(--paper-2); transform: translateY(-2px); }
+  .adv-ic {
+    width: 46px; height: 46px; border-radius: 50%;
+    display: grid; place-items: center;
+    border: 1px solid var(--line-light); color: #9a7c3c;
+    background: linear-gradient(135deg, rgba(201,165,92,.14), rgba(201,165,92,0));
+  }
+  .adv-ic svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+  .adv-card h4 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  .adv-card p { font-size: 14.5px; line-height: 1.65; color: var(--muted); }
+  .adv-card .adv-tag { margin-top: auto; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9a7c3c; padding-top: 8px; }
+  @media (max-width: 900px) { .adv-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .adv-grid { grid-template-columns: 1fr; } .adv-head h3 { font-size: 26px; } }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: .01s !important; transition-duration: .01s !important; }
     .hero-media img { animation: none; }
@@ -893,9 +945,9 @@
       </div>
 
       <div class="hero-facts" data-hero-fade>
-        <div class="hero-fact"><strong data-counter="7">0</strong><span>этажей — жилые уровни над торговой галереей</span></div>
-        <div class="hero-fact"><strong data-counter="4">0</strong><span>квартиры на этаже по проектному альбому</span></div>
-        <div class="hero-fact"><strong data-counter="1">0</strong><span>коммерческий этаж — кафе и магазины у дома</span></div>
+        <div class="hero-fact"><strong data-counter="6">0</strong><span>этажей — камерный дом премиум-класса</span></div>
+        <div class="hero-fact"><strong data-counter="5">0</strong><span>жилых уровня над торговой галереей</span></div>
+        <div class="hero-fact"><strong data-counter="4">0</strong><span>квартиры на этаже — просторные планировки</span></div>
         <div class="hero-fact"><strong data-counter="49">0</strong><span>ул. Абазгаа — адрес комплекса в Гагре</span></div>
       </div>
     </div>
@@ -917,7 +969,7 @@
       <div class="section-head">
         <span class="eyebrow">01 · О проекте</span>
         <h2 data-split>Архитектура, которой Гагре не хватало</h2>
-        <p class="lead" data-reveal>Компактный дом на семь этажей: строгий графитовый объём на светлом основании, глубокие балконы и стекло от пола до потолка.</p>
+        <p class="lead" data-reveal>Камерный дом на шесть этажей: строгий графитовый объём на светлом основании, глубокие балконы, собственный паркинг и стекло от пола до потолка.</p>
       </div>
       <div class="about-grid">
         <div class="about-copy" data-reveal>
@@ -939,6 +991,51 @@
           </div>
         </div>
       </div>
+
+      <div class="adv">
+        <div class="adv-head" data-reveal>
+          <h3 data-split>Почему выбирают Инал Принц Тауэр</h3>
+          <span>Преимущества комплекса</span>
+        </div>
+        <div class="adv-grid">
+          <article class="adv-card" data-reveal>
+            <div class="adv-ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 16V8h3.5a2.5 2.5 0 0 1 0 5H9"/></svg></div>
+            <h4>Собственный паркинг</h4>
+            <p>Наземные машиноместа во дворе и закрытый подземный уровень с въездной рампой — автомобиль всегда рядом с домом.</p>
+            <span class="adv-tag">Наземный + подземный</span>
+          </article>
+          <article class="adv-card" data-reveal>
+            <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 15c1.5 0 1.5 1.5 3 1.5S8.5 15 10 15s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5"/><path d="M3 19c1.5 0 1.5 1.5 3 1.5S8.5 19 10 19s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5"/><circle cx="17" cy="6" r="3"/></svg></div>
+            <h4>Море и горы рядом</h4>
+            <p>Курортная Гагра: до пляжа и набережной — минуты, с верхних этажей и балконов открываются виды на зелёные склоны Кавказа.</p>
+            <span class="adv-tag">Локация у моря</span>
+          </article>
+          <article class="adv-card" data-reveal>
+            <div class="adv-ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M12 3v18"/></svg></div>
+            <h4>Панорамное остекление</h4>
+            <p>Стекло от пола до потолка и глубокие балконы: в квартирах максимум света, воздуха и морского горизонта в кадре.</p>
+            <span class="adv-tag">Свет и виды</span>
+          </article>
+          <article class="adv-card" data-reveal>
+            <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M4 9l1-4h14l1 4"/><path d="M4 9v11h16V9"/><path d="M4 9a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0"/><path d="M10 20v-5h4v5"/></svg></div>
+            <h4>Инфраструктура в доме</h4>
+            <p>Торговая галерея на первом этаже: кофейня, цветы и магазины у входа. За кофе и продуктами не нужно выходить со двора.</p>
+            <span class="adv-tag">Коммерция на 1 этаже</span>
+          </article>
+          <article class="adv-card" data-reveal>
+            <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M9 20V6M14 20v-8M19 20V4"/><path d="M3 20h18"/></svg></div>
+            <h4>Инвестиция у моря</h4>
+            <p>Ликвидный формат в растущем курорте: квартиру можно сдавать посуточно в сезон или держать как актив с потенциалом роста цены.</p>
+            <span class="adv-tag">Доход от аренды</span>
+          </article>
+          <article class="adv-card" data-reveal>
+            <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+            <h4>Камерный формат</h4>
+            <p>Всего 6 этажей и по 4 квартиры на этаже — меньше соседей, тише двор и больше приватности, чем в многоэтажных ЖК.</p>
+            <span class="adv-tag">Приватность</span>
+          </article>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -948,17 +1045,22 @@
       <div class="section-head">
         <span class="eyebrow">02 · Интерактив</span>
         <h2 data-split style="color:var(--white)">Покрутите дом своими руками</h2>
-        <p class="lead" data-reveal>Настоящая 3D-модель здания — не видео и не картинка. Вращайте, приближайте, выбирайте готовые ракурсы.</p>
+        <p class="lead" data-reveal>Настоящая 3D-модель квартала — не видео и не картинка. Дом, собственный паркинг и благоустройство. Вращайте, приближайте, включайте вечернюю подсветку.</p>
       </div>
     </div>
     <div class="model-shell" data-cursor="Крутить">
       <div id="modelViewer"></div>
-      <div class="model-loading" id="modelLoading">Загрузка модели</div>
-      <div class="model-note">Интерактивная модель</div>
+      <div class="model-loading" id="modelLoading">Собираем 3D-сцену</div>
+      <div class="model-note">Интерактивная модель · 6 этажей · паркинг</div>
+      <div class="model-light" role="group" aria-label="Освещение сцены">
+        <button type="button" data-scene-mode="day" class="active">☀ День</button>
+        <button type="button" data-scene-mode="night">☾ Вечер</button>
+      </div>
       <div class="model-ui" role="group" aria-label="Ракурсы модели">
         <button type="button" data-view="corner" class="active">Ракурс</button>
         <button type="button" data-view="side">Сбоку</button>
         <button type="button" data-view="top">Сверху</button>
+        <button type="button" data-view="parking">Паркинг</button>
         <button type="button" data-view="auto">⟳ Авто</button>
       </div>
     </div>
@@ -1326,6 +1428,7 @@
       document.querySelectorAll('.daynight button').forEach(function (other) { other.classList.remove('active'); });
       btn.classList.add('active');
       hero.classList.toggle('night-mode', btn.dataset.mode === 'night');
+      window.dispatchEvent(new CustomEvent('scene:daynight', { detail: { mode: btn.dataset.mode } }));
     });
   });
 
@@ -1466,70 +1569,340 @@
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const viewer = document.getElementById('modelViewer');
 const loadingEl = document.getElementById('modelLoading');
 
-const scene = new THREE.Scene();
-scene.background = null;
-scene.fog = new THREE.Fog(0x101314, 50, 130);
-
-const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 220);
-const TARGET = new THREE.Vector3(0, 9.6, -1.8);
-const VIEWS = {
-  corner: new THREE.Vector3(44, 23, -48),
-  side:   new THREE.Vector3(-52, 16, -20),
-  top:    new THREE.Vector3(6, 62, -14)
-};
-camera.position.copy(VIEWS.corner);
-
+/* ---------- Рендерер ---------- */
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.08;
+renderer.toneMappingExposure = 1.05;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 viewer.appendChild(renderer.domElement);
 
+/* ---------- Сцена и окружение ---------- */
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0x9fb2c2, 90, 260);
+
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+
+// Небо-градиент (перекрашивается день/вечер)
+const skyUniforms = {
+  top: { value: new THREE.Color(0x8fb6d8) },
+  bottom: { value: new THREE.Color(0xeaddc6) }
+};
+const sky = new THREE.Mesh(
+  new THREE.SphereGeometry(360, 32, 16),
+  new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false, uniforms: skyUniforms,
+    vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
+    fragmentShader: 'varying vec3 vP; uniform vec3 top; uniform vec3 bottom; void main(){ float h = clamp(normalize(vP).y*0.5+0.5,0.0,1.0); gl_FragColor = vec4(mix(bottom, top, pow(h,0.7)),1.0); }'
+  })
+);
+scene.add(sky);
+
+/* ---------- Камера ---------- */
+const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 800);
+const VIEWS = {
+  corner:  { pos: new THREE.Vector3(40, 23, 42),  target: new THREE.Vector3(0, 8, 1) },
+  side:    { pos: new THREE.Vector3(-48, 15, 6),   target: new THREE.Vector3(0, 8, -1) },
+  top:     { pos: new THREE.Vector3(4, 64, 30),    target: new THREE.Vector3(-3, 1, 6) },
+  parking: { pos: new THREE.Vector3(-34, 10, 32),  target: new THREE.Vector3(-14, 2, 8) }
+};
+camera.position.copy(VIEWS.corner.pos);
+
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.06;
-controls.target.copy(TARGET);
-controls.minDistance = 14;
-controls.maxDistance = 120;
-controls.maxPolarAngle = Math.PI * 0.52;
+controls.target.copy(VIEWS.corner.target);
+controls.minDistance = 12;
+controls.maxDistance = 150;
+controls.maxPolarAngle = Math.PI * 0.5;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 0.7;
+controls.autoRotateSpeed = 0.6;
 
-scene.add(new THREE.HemisphereLight(0xdde9ff, 0x302b24, 2.4));
-const sun = new THREE.DirectionalLight(0xfff4e0, 3.2);
-sun.position.set(-24, 42, 26);
+/* ---------- Свет ---------- */
+const hemi = new THREE.HemisphereLight(0xdcecff, 0x2b2620, 2.15);
+scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xfff2dc, 3.0);
+sun.position.set(-26, 46, 24);
 sun.castShadow = true;
 sun.shadow.mapSize.set(2048, 2048);
-sun.shadow.camera.left = -50; sun.shadow.camera.right = 50;
-sun.shadow.camera.top = 50; sun.shadow.camera.bottom = -50;
+sun.shadow.camera.left = -48; sun.shadow.camera.right = 48;
+sun.shadow.camera.top = 48; sun.shadow.camera.bottom = -48;
+sun.shadow.camera.near = 1; sun.shadow.camera.far = 180;
 sun.shadow.bias = -0.0004;
 scene.add(sun);
-const rim = new THREE.DirectionalLight(0x9db8ff, 0.9);
-rim.position.set(30, 18, -40);
+const rim = new THREE.DirectionalLight(0x9db8ff, 0.7);
+rim.position.set(34, 20, -38);
 scene.add(rim);
 
-new GLTFLoader().load(
-  'inal-prince-tower-7fl-site-model.glb',
-  gltf => {
-    gltf.scene.traverse(node => {
-      if (node.isMesh) { node.castShadow = true; node.receiveShadow = true; }
-    });
-    scene.add(gltf.scene);
-    loadingEl.classList.add('hidden');
-  },
-  undefined,
-  () => { loadingEl.textContent = 'Не удалось загрузить модель'; }
-);
+/* ---------- Материалы ---------- */
+const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0x6b5324, emissive: 0xffcf87, emissiveIntensity: 0, roughness: 0.4, metalness: 0.6 });
+const lampTipMat  = new THREE.MeshStandardMaterial({ color: 0x2c2716, emissive: 0xffd28a, emissiveIntensity: 0, roughness: 0.5 });
+const M = {
+  graphite:     new THREE.MeshStandardMaterial({ color: 0x2b2f34, roughness: 0.6, metalness: 0.18 }),
+  graphiteDark: new THREE.MeshStandardMaterial({ color: 0x21262b, roughness: 0.55, metalness: 0.2 }),
+  stone:        new THREE.MeshStandardMaterial({ color: 0xded7c7, roughness: 0.78, metalness: 0.02 }),
+  gold:         new THREE.MeshStandardMaterial({ color: 0xc9a55c, roughness: 0.3, metalness: 0.95, envMapIntensity: 1.3 }),
+  glass:        new THREE.MeshPhysicalMaterial({ color: 0x2a3c4c, roughness: 0.06, metalness: 0, envMapIntensity: 1.6, clearcoat: 1, clearcoatRoughness: 0.06, transparent: true, opacity: 0.9, emissive: 0xffd9a6, emissiveIntensity: 0 }),
+  railGlass:    new THREE.MeshPhysicalMaterial({ color: 0xb0c6d4, roughness: 0.05, metalness: 0, envMapIntensity: 1.5, transparent: true, opacity: 0.22 }),
+  asphalt:      new THREE.MeshStandardMaterial({ color: 0x26282b, roughness: 0.96 }),
+  paving:       new THREE.MeshStandardMaterial({ color: 0x928f86, roughness: 0.85 }),
+  pavingLight:  new THREE.MeshStandardMaterial({ color: 0xb4ae9f, roughness: 0.82 }),
+  line:         new THREE.MeshStandardMaterial({ color: 0xe7e2d4, roughness: 0.9 }),
+  grass:        new THREE.MeshStandardMaterial({ color: 0x4f7a43, roughness: 0.95 }),
+  trunk:        new THREE.MeshStandardMaterial({ color: 0x5a4632, roughness: 0.9 }),
+  leaf:         new THREE.MeshStandardMaterial({ color: 0x3c6b39, roughness: 0.85 }),
+  palm:         new THREE.MeshStandardMaterial({ color: 0x4f8f3e, roughness: 0.8, side: THREE.DoubleSide }),
+  tyre:         new THREE.MeshStandardMaterial({ color: 0x141414, roughness: 0.85 }),
+  chrome:       new THREE.MeshStandardMaterial({ color: 0x9aa0a6, roughness: 0.3, metalness: 0.9 }),
+  carGlass:     new THREE.MeshPhysicalMaterial({ color: 0x0c1418, roughness: 0.08, metalness: 0, transparent: true, opacity: 0.72, envMapIntensity: 1.4 }),
+  headLight:    new THREE.MeshStandardMaterial({ color: 0x20242a, emissive: 0xfff2cf, emissiveIntensity: 0 }),
+  redLight:     new THREE.MeshStandardMaterial({ color: 0x3a0f0f, emissive: 0xff2a12, emissiveIntensity: 0.25 })
+};
 
-// Пауза автоворота при взаимодействии, возврат через 5с
+const windowPanels = [];  // остеклённые панели, зажигаются вечером
+const lampLights = [];    // фонари
+
+function box(w, h, d, mat, x = 0, y = 0, z = 0, cast = true, rec = true) {
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
+  m.position.set(x, y, z); m.castShadow = cast; m.receiveShadow = rec;
+  return m;
+}
+function glassPanel(w, h, d, x, y, z) {
+  const mat = M.glass.clone();
+  const m = box(w, h, d, mat, x, y, z, false, false);
+  m.userData.lit = Math.random() < 0.55 ? (0.2 + Math.random() * 0.55) : 0; // часть окон «горит»
+  windowPanels.push(m);
+  return m;
+}
+function signTexture(text, bg, fg) {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d');
+  g.fillStyle = bg; g.fillRect(0, 0, 128, 128);
+  g.fillStyle = fg; g.font = 'bold 84px Georgia, serif';
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(text, 64, 70);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+
+/* ---------- Здание: 6 этажей ---------- */
+const BW = 18, BD = 13;
+const heights = [4.6, 3.1, 3.1, 3.1, 3.1, 3.1]; // 1 коммерческий + 5 жилых
+const totalH = heights.reduce((a, b) => a + b, 0);
+const building = new THREE.Group();
+scene.add(building);
+
+building.add(box(BW + 1.8, 0.7, BD + 1.8, M.stone, 0, 0.35, 0));                       // цоколь
+building.add(box(BW - 1.2, totalH, 0.8, M.graphiteDark, 0, totalH / 2 + 0.7, -(BD / 2 - 0.35))); // глухая задняя стена
+const pierX = BW / 2 - 0.4, pierZ = BD / 2 - 0.4, baseY = 0.7;
+[[pierX, pierZ], [-pierX, pierZ], [pierX, -pierZ], [-pierX, -pierZ]].forEach(([x, z]) =>
+  building.add(box(0.9, totalH, 0.9, M.graphite, x, totalH / 2 + baseY, z)));          // угловые пилоны
+[-6, 6].forEach(x => building.add(box(0.55, totalH, 0.55, M.graphite, x, totalH / 2 + baseY, pierZ))); // фронтальные пилоны
+
+const frontZ = BD / 2 - 0.35;
+let y = baseY;
+heights.forEach((h, i) => {
+  const isGround = i === 0;
+  const cy = y + (h - 0.5) / 2 + 0.25;
+  // фронтальное остекление (3 секции между пилонами)
+  [-6, 0, 6].forEach(px => building.add(glassPanel(5.2, h - 0.5, 0.14, px, cy, frontZ)));
+  // боковое остекление
+  [-(BW / 2 - 0.35), BW / 2 - 0.35].forEach(px => building.add(glassPanel(0.14, h - 0.5, BD - 2.6, px, cy, 0)));
+  // межэтажная плита-карниз
+  building.add(box(BW + 0.8, 0.28, BD + 0.8, M.stone, 0, y + h - 0.14, 0));
+  // балконы жилых этажей
+  if (!isGround) {
+    building.add(box(BW - 1.0, 1.02, 0.06, M.railGlass, 0, y + 0.55, BD / 2 + 0.5, false, false));
+    building.add(box(BW - 1.0, 0.06, 0.13, M.gold, 0, y + 1.06, BD / 2 + 0.52));
+    [-(BW / 2 - 0.1), BW / 2 - 0.1].forEach(px => building.add(box(0.06, 1.02, 3.2, M.railGlass, px, y + 0.55, BD / 2 - 1.4, false, false)));
+  } else {
+    // витрины 1-го этажа: золотые вертикальные фины
+    for (let x = -7.5; x <= 7.5; x += 1.7) building.add(box(0.1, h - 0.7, 0.16, M.gold, x, y + (h - 0.7) / 2 + 0.15, frontZ + 0.06));
+    // входная группа
+    building.add(box(5, h - 0.8, 0.5, M.graphiteDark, 0, y + (h - 0.8) / 2 + 0.15, frontZ - 0.15));
+    building.add(box(3.4, h - 1.1, 0.14, M.carGlass, 0, y + (h - 1.1) / 2 + 0.2, frontZ + 0.05, false, false));
+  }
+  y += h;
+});
+
+// Входной козырёк с золотой подсветкой снизу + бренд-плита
+const canopyY = baseY + heights[0] - 0.15;
+building.add(box(7.2, 0.3, 2.8, M.graphite, 0, canopyY, BD / 2 + 1.2));
+building.add(box(6.4, 0.06, 2.2, goldGlowMat, 0, canopyY - 0.17, BD / 2 + 1.2, false, false));
+const brand = box(4.2, 0.8, 0.12, new THREE.MeshStandardMaterial({ color: 0x14161b, emissive: 0xc9a55c, emissiveIntensity: 0.35, emissiveMap: signTexture('IPT', '#14161b', '#c9a55c'), map: signTexture('IPT', '#14161b', '#c9a55c'), roughness: 0.5 }), 0, canopyY + 1.0, frontZ + 0.1, false, false);
+building.add(brand);
+
+/* ---------- Крыша: терраса ---------- */
+const roofY = baseY + totalH;
+building.add(box(BW - 1.2, 0.12, BD - 1.2, M.pavingLight, 0, roofY + 0.06, 0));
+// парапет
+building.add(box(BW + 0.6, 0.9, 0.4, M.graphiteDark, 0, roofY + 0.45, BD / 2 + 0.05));
+building.add(box(BW + 0.6, 0.9, 0.4, M.graphiteDark, 0, roofY + 0.45, -(BD / 2 + 0.05)));
+building.add(box(0.4, 0.9, BD + 0.6, M.graphiteDark, BW / 2 + 0.05, roofY + 0.45, 0));
+building.add(box(0.4, 0.9, BD + 0.6, M.graphiteDark, -(BW / 2 + 0.05), roofY + 0.45, 0));
+// перголы и зелень на крыше
+[[-4.5, -3], [-4.5, 2], [1.5, -3], [1.5, 2]].forEach(([x, z]) => building.add(box(0.16, 2.4, 0.16, M.graphite, x, roofY + 1.2, z)));
+for (let x = -4.5; x <= 1.5; x += 0.7) building.add(box(0.08, 0.08, 5.4, M.graphite, x, roofY + 2.4, -0.5));
+building.add(box(2.6, 0.6, 1.6, M.leaf, 5.5, roofY + 0.4, -3.5));
+building.add(box(2.6, 0.6, 1.6, M.leaf, 5.5, roofY + 0.4, 3.5));
+building.add(box(3, 1.3, 2, M.graphite, -6, roofY + 0.75, -3.5)); // тех-блок
+
+/* ---------- Земля / участок ---------- */
+const ground = box(220, 0.4, 160, M.paving, 0, -0.2, 20, false, true);
+scene.add(ground);
+// плаза перед домом
+scene.add(box(BW + 22, 0.06, 10, M.pavingLight, -2, 0.04, BD / 2 + 6, false, true));
+// тротуар и улица
+scene.add(box(200, 0.05, 3.4, M.pavingLight, 0, 0.05, 15.5, false, true));
+scene.add(box(200, 0.06, 13, M.asphalt, 0, 0.06, 24, false, true));
+for (let x = -90; x <= 90; x += 6) scene.add(box(2.6, 0.02, 0.28, M.line, x, 0.1, 24, false, false)); // разметка полосы
+// газоны
+scene.add(box(200, 0.05, 4, M.grass, 0, 0.05, 32, false, true));
+
+/* ---------- Наземный паркинг с машинами ---------- */
+function makeCar(color) {
+  const g = new THREE.Group();
+  const paint = new THREE.MeshPhysicalMaterial({ color, roughness: 0.32, metalness: 0.5, clearcoat: 0.85, clearcoatRoughness: 0.2, envMapIntensity: 1.3 });
+  g.add(box(4.0, 0.72, 1.82, paint, 0, 0.72, 0));
+  g.add(box(4.1, 0.42, 1.86, new THREE.MeshStandardMaterial({ color: 0x1b1b1d, roughness: 0.7 }), 0, 0.42, 0));
+  g.add(box(2.3, 0.7, 1.6, paint, -0.15, 1.3, 0));
+  g.add(box(2.15, 0.6, 1.66, M.carGlass, -0.15, 1.32, 0, false, false));
+  const wheelGeo = new THREE.CylinderGeometry(0.36, 0.36, 0.26, 16);
+  [[1.32, 0.95], [1.32, -0.95], [-1.32, 0.95], [-1.32, -0.95]].forEach(([x, z]) => {
+    const w = new THREE.Mesh(wheelGeo, M.tyre); w.rotation.x = Math.PI / 2; w.position.set(x, 0.36, z); w.castShadow = true; g.add(w);
+    const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.28, 10), M.chrome); hub.rotation.x = Math.PI / 2; hub.position.set(x, 0.36, z); g.add(hub);
+  });
+  [0.55, -0.55].forEach(z => { g.add(box(0.1, 0.16, 0.34, M.headLight, 2.02, 0.72, z, false, false)); g.add(box(0.1, 0.16, 0.34, M.redLight, -2.02, 0.72, z, false, false)); });
+  return g;
+}
+const carColors = [0xf2f2f2, 0x1d1f22, 0x9aa2ab, 0x233a5e, 0x7a1e22, 0x3c4046, 0xcabfa1];
+const parkGroup = new THREE.Group(); scene.add(parkGroup);
+parkGroup.add(box(17, 0.07, 15, M.asphalt, -16, 0.07, 9, false, true)); // площадка паркинга
+// разметка мест (два ряда)
+let ci = 0;
+[[4.4, 0], [13.6, 1]].forEach(([bz, row]) => {
+  for (let i = 0; i < 5; i++) {
+    const bx = -22.5 + i * 2.7;
+    parkGroup.add(box(0.1, 0.02, 4.8, M.line, bx, 0.11, bz, false, false));
+    if ((row + i) % 2 === 0 && ci < 7) {                     // часть мест занята
+      const car = makeCar(carColors[ci % carColors.length]);
+      car.rotation.y = Math.PI / 2;
+      car.position.set(bx + 1.35, 0, bz);
+      parkGroup.add(car); ci++;
+    }
+  }
+  parkGroup.add(box(13.5, 0.1, 0.1, M.line, -16, 0.11, bz + (row ? 2.4 : -2.4), false, false));
+});
+// пара машин на улице
+const street1 = makeCar(0x0e0f11); street1.position.set(-14, 0, 22); scene.add(street1);
+const street2 = makeCar(0xe8e8e8); street2.rotation.y = Math.PI; street2.position.set(18, 0, 26); scene.add(street2);
+
+/* ---------- Подземный паркинг: рампа + знак ---------- */
+const ramp = new THREE.Group(); ramp.position.set(15.5, 0, 6); scene.add(ramp);
+const rampFloor = box(6, 0.3, 5, M.asphalt, 0, -1.4, 0); rampFloor.rotation.x = 0.46; ramp.add(rampFloor);
+ramp.add(box(6.4, 2.4, 0.4, M.graphite, 0, -0.6, 2.6));   // борта
+ramp.add(box(6.4, 2.4, 0.4, M.graphite, 0, -0.6, -2.6));
+ramp.add(box(0.4, 3.4, 5.4, M.graphiteDark, -3, -0.9, 0)); // портал въезда
+[-1.4, 1.4].forEach(z => ramp.add(box(2.4, 0.02, 0.2, M.line, 0.5, 0.05, z, false, false))); // стрелки-разметка
+// пилон «P»
+const pMat = new THREE.MeshStandardMaterial({ color: 0x16345f, emissive: 0x3a6bd6, emissiveIntensity: 0.35, emissiveMap: signTexture('P', '#16345f', '#ffffff'), map: signTexture('P', '#16345f', '#ffffff'), roughness: 0.5 });
+ramp.add(box(0.16, 3, 0.16, M.graphite, 3.3, 1.5, 2.7));
+ramp.add(box(1.1, 1.1, 0.12, pMat, 3.3, 3, 2.7, false, false));
+// шлагбаум (поднят)
+const barrier = box(3.4, 0.12, 0.12, new THREE.MeshStandardMaterial({ color: 0xd23b2a, roughness: 0.6 }), 0, 1.6, 3);
+barrier.rotation.z = 0.5; ramp.add(barrier);
+ramp.add(box(0.2, 1.2, 0.2, M.graphite, 1.7, 0.9, 3));
+
+/* ---------- Озеленение ---------- */
+function makePalm(x, z, s = 1) {
+  const g = new THREE.Group();
+  const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.28, 5.4, 10), M.trunk);
+  tr.position.y = 2.7; tr.castShadow = true; g.add(tr);
+  const frond = new THREE.PlaneGeometry(3.6, 0.85); frond.translate(1.8, 0, 0);
+  for (let i = 0; i < 8; i++) {
+    const f = new THREE.Mesh(frond, M.palm);
+    f.position.y = 5.4; f.rotation.order = 'YXZ';
+    f.rotation.y = i * Math.PI / 4; f.rotation.z = -0.45 - Math.random() * 0.15;
+    f.castShadow = true; g.add(f);
+  }
+  g.position.set(x, 0, z); g.scale.setScalar(s); return g;
+}
+function makeTree(x, z, s = 1) {
+  const g = new THREE.Group();
+  const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.32, 1.9, 8), M.trunk);
+  tr.position.y = 0.95; tr.castShadow = true; g.add(tr);
+  const f1 = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, 0), M.leaf);
+  f1.position.y = 3.0; f1.scale.set(1, 1.15, 1); f1.castShadow = true; g.add(f1);
+  const f2 = new THREE.Mesh(new THREE.IcosahedronGeometry(1.2, 0), M.leaf);
+  f2.position.set(0.8, 2.2, 0.4); f2.castShadow = true; g.add(f2);
+  g.position.set(x, 0, z); g.scale.setScalar(s); return g;
+}
+[[-11, 12.5], [-2, 13.5], [7, 12.5], [13, 12], [-26, 4], [-26, 14]].forEach(([x, z], i) => scene.add(makePalm(x, z, 0.9 + (i % 3) * 0.12)));
+[[24, 12], [-30, 20], [26, 18], [-6, 30]].forEach(([x, z]) => scene.add(makeTree(x, z, 0.95)));
+// живые изгороди вдоль дома
+[-1, 1].forEach(s => scene.add(box(9, 0.7, 0.7, M.grass, s * 6.5, 0.35, BD / 2 + 2.6, true, true)));
+
+/* ---------- Фонари ---------- */
+function makeLamp(x, z) {
+  const g = new THREE.Group();
+  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.12, 5, 10), M.graphite);
+  pole.position.y = 2.5; pole.castShadow = true; g.add(pole);
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.26, 14, 12), lampTipMat);
+  head.position.y = 5.05; g.add(head);
+  const pl = new THREE.PointLight(0xffd7a0, 0, 22, 2); pl.position.set(0, 4.9, 0);
+  pl.userData.max = 1.4; g.add(pl); lampLights.push(pl);
+  g.position.set(x, 0, z); return g;
+}
+[[-24, 4], [-24, 15], [10, 12], [-2, 12], [16, 20], [-16, 20]].forEach(([x, z]) => scene.add(makeLamp(x, z)));
+
+/* ---------- Смена времени суток ---------- */
+const dayP = { skyTop: new THREE.Color(0x8fb6d8), skyBot: new THREE.Color(0xeaddc6), fog: new THREE.Color(0x9fb2c2), sunCol: new THREE.Color(0xfff2dc), sunPos: new THREE.Vector3(-26, 46, 24), hemi: 2.15, sun: 3.0, rim: 0.7, exp: 1.05 };
+const nightP = { skyTop: new THREE.Color(0x081120), skyBot: new THREE.Color(0x1b2a3b), fog: new THREE.Color(0x0b1622), sunCol: new THREE.Color(0x9fb6de), sunPos: new THREE.Vector3(22, 24, -28), hemi: 0.5, sun: 0.55, rim: 0.22, exp: 1.18 };
+const state = { mix: 0 };
+function applyState() {
+  const t = state.mix;
+  skyUniforms.top.value.lerpColors(dayP.skyTop, nightP.skyTop, t);
+  skyUniforms.bottom.value.lerpColors(dayP.skyBot, nightP.skyBot, t);
+  scene.fog.color.lerpColors(dayP.fog, nightP.fog, t);
+  hemi.intensity = THREE.MathUtils.lerp(dayP.hemi, nightP.hemi, t);
+  sun.intensity = THREE.MathUtils.lerp(dayP.sun, nightP.sun, t);
+  sun.color.lerpColors(dayP.sunCol, nightP.sunCol, t);
+  sun.position.lerpVectors(dayP.sunPos, nightP.sunPos, t);
+  rim.intensity = THREE.MathUtils.lerp(dayP.rim, nightP.rim, t);
+  renderer.toneMappingExposure = THREE.MathUtils.lerp(dayP.exp, nightP.exp, t);
+  windowPanels.forEach(p => { p.material.emissiveIntensity = t * p.userData.lit; });
+  lampLights.forEach(l => { l.intensity = t * l.userData.max; });
+  lampTipMat.emissiveIntensity = t * 1.8;
+  goldGlowMat.emissiveIntensity = t * 1.1;
+  M.headLight.emissiveIntensity = t * 1.5;
+  M.redLight.emissiveIntensity = 0.25 + t * 0.9;
+}
+applyState();
+function setSceneMode(mode) {
+  const target = mode === 'night' ? 1 : 0;
+  if (window.gsap) gsap.to(state, { mix: target, duration: 1.1, ease: 'power2.inOut', onUpdate: applyState });
+  else { state.mix = target; applyState(); }
+}
+function applyMode(mode) {
+  setSceneMode(mode);
+  document.querySelectorAll('.model-light button').forEach(b => b.classList.toggle('active', b.dataset.sceneMode === mode));
+}
+window.addEventListener('scene:daynight', e => applyMode(e.detail.mode));
+document.querySelectorAll('.model-light button').forEach(b => b.addEventListener('click', () => {
+  applyMode(b.dataset.sceneMode);
+  const hero = document.getElementById('hero');
+  document.querySelectorAll('.daynight button').forEach(x => x.classList.toggle('active', x.dataset.mode === b.dataset.sceneMode));
+  if (hero) hero.classList.toggle('night-mode', b.dataset.sceneMode === 'night');
+}));
+
+/* ---------- Автоворот: пауза при взаимодействии ---------- */
 let idleTimer = null;
 function pauseAutoRotate() {
   controls.autoRotate = false;
@@ -1542,42 +1915,35 @@ function pauseAutoRotate() {
 renderer.domElement.addEventListener('pointerdown', pauseAutoRotate);
 renderer.domElement.addEventListener('wheel', pauseAutoRotate, { passive: true });
 
-// Кнопки ракурсов
+/* ---------- Кнопки ракурсов ---------- */
 const viewButtons = document.querySelectorAll('.model-ui button');
-viewButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    viewButtons.forEach(other => other.classList.remove('active'));
-    btn.classList.add('active');
-    const view = btn.dataset.view;
-    if (view === 'auto') { controls.autoRotate = true; return; }
-    controls.autoRotate = false;
-    const to = VIEWS[view];
-    if (typeof gsap !== 'undefined') {
-      gsap.to(camera.position, { x: to.x, y: to.y, z: to.z, duration: 1.6, ease: 'power3.inOut' });
-    } else {
-      camera.position.copy(to);
-    }
-  });
-});
-// «Ракурс» активен на старте вместе с автоворотом
+viewButtons.forEach(btn => btn.addEventListener('click', () => {
+  viewButtons.forEach(o => o.classList.remove('active'));
+  btn.classList.add('active');
+  const view = btn.dataset.view;
+  if (view === 'auto') { controls.autoRotate = true; return; }
+  controls.autoRotate = false;
+  const to = VIEWS[view];
+  if (window.gsap) {
+    gsap.to(camera.position, { x: to.pos.x, y: to.pos.y, z: to.pos.z, duration: 1.6, ease: 'power3.inOut' });
+    gsap.to(controls.target, { x: to.target.x, y: to.target.y, z: to.target.z, duration: 1.6, ease: 'power3.inOut' });
+  } else { camera.position.copy(to.pos); controls.target.copy(to.target); }
+}));
 document.querySelector('.model-ui [data-view="auto"]').classList.add('active');
 document.querySelector('.model-ui [data-view="corner"]').classList.remove('active');
 
+/* ---------- Рендер ---------- */
 function resize() {
-  const width = viewer.clientWidth || 1;
-  const height = viewer.clientHeight || 1;
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
-  renderer.setSize(width, height);
+  const w = viewer.clientWidth || 1, h = viewer.clientHeight || 1;
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
 }
 window.addEventListener('resize', resize);
 resize();
+requestAnimationFrame(() => loadingEl.classList.add('hidden'));
 
-// Рендерим только когда секция видна — бережём батарею
 let visible = false;
-new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }, { threshold: 0.05 })
-  .observe(viewer);
-
+new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }, { threshold: 0.02 }).observe(viewer);
 renderer.setAnimationLoop(() => {
   if (!visible) return;
   controls.update();
