@@ -4,15 +4,15 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Инал Принц Тауэр — премиум-квартиры у моря в Гагре, ул. Абазгаа, 49</title>
-<meta name="description" content="Инал Принц Тауэр — камерный жилой комплекс премиум-класса в Гагре, ул. Абазгаа, 49. 6 этажей, собственный паркинг, торговая галерея, панорамное остекление, интерактивная 3D-модель дома и планировки. Квартиры у моря с видом на горы — старт продаж." />
+<meta name="description" content="Инал Принц Тауэр — камерный жилой комплекс премиум-класса в Гагре, ул. Абазгаа, 49. 6 этажей, собственный паркинг, торговая галерея, панорамное остекление и планировки по реальным рендерам проекта. Квартиры у моря с видом на горы — старт продаж." />
 <meta name="keywords" content="квартиры в Гагре, ЖК Гагра, недвижимость Абхазия, купить квартиру у моря, Инал Принц Тауэр, Абазгаа 49" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#0e0f10" />
 <meta property="og:title" content="Инал Принц Тауэр — премиум-квартиры у моря в Гагре" />
-<meta property="og:description" content="6 этажей, собственный паркинг, торговая галерея и панорамное остекление на ул. Абазгаа, 49. Интерактивная 3D-модель дома, планировки и заявка в один клик." />
+<meta property="og:description" content="6 этажей, собственный паркинг, торговая галерея и панорамное остекление на ул. Абазгаа, 49. Реальные рендеры дома, планировки и заявка в один клик." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="inal-prince-tower-7fl-view-01-corner-day.png" />
-<link rel="preload" as="image" href="inal-prince-tower-7fl-view-01-corner-day.png" />
+<meta property="og:image" content="photo-hero.jpg" />
+<link rel="preload" as="image" href="photo-hero.jpg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230e0f10'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23c8a45d' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' fill='%23e7d09b' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -245,12 +245,9 @@
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover; object-position: 60% center;
-    transition: opacity 1.6s ease;
     animation: kenburns 26s ease-in-out infinite alternate;
     will-change: transform;
   }
-  .hero-media img.night { opacity: 0; }
-  .hero.night-mode .hero-media img.night { opacity: 1; }
   @keyframes kenburns {
     from { transform: scale(1.02); }
     to   { transform: scale(1.11); }
@@ -265,7 +262,6 @@
   }
   .hero-inner {
     position: relative; z-index: 2;
-    /* якорь для .daynight */
     width: min(1280px, calc(100% - clamp(32px, 6vw, 96px)));
     margin: 0 auto;
     padding: 140px 0 0;
@@ -316,25 +312,6 @@
   .btn-primary:hover::before { transform: translateX(110%); }
   .btn-ghost { color: var(--white); border-color: rgba(255, 255, 255, .32); background: rgba(255, 255, 255, .04); backdrop-filter: blur(6px); }
   .btn-ghost:hover { border-color: var(--gold-2); color: var(--gold-2); }
-
-  .daynight {
-    position: absolute; z-index: 3;
-    right: 0; bottom: 4px;
-    display: flex; gap: 0;
-    border: 1px solid rgba(255, 255, 255, .28);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(12, 13, 14, .35);
-    border-radius: 999px;
-    padding: 4px;
-  }
-  .daynight button {
-    border: 0; background: transparent; color: rgba(255, 255, 255, .66);
-    font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
-    padding: 9px 18px; border-radius: 999px; cursor: pointer;
-    transition: background .4s, color .4s;
-  }
-  .daynight button.active { background: var(--gold-2); color: #171307; }
 
   .hero-facts {
     position: relative; z-index: 2;
@@ -460,83 +437,80 @@
   .about-badge strong { display: block; font-family: var(--font-display); font-size: 30px; color: var(--gold-2); margin-bottom: 6px; }
   .about-badge span { font-size: 12.5px; color: var(--muted-dark); line-height: 1.5; display: block; }
 
-  /* ============ 3D MODEL ============ */
-  .model-section { background: var(--bg-2); }
-  .model-shell {
+  /* ============ ПРОГУЛКА (скролл-секция) ============ */
+  .walk-section { background: var(--bg-2); }
+  .walk-pin {
     position: relative;
-    height: min(78svh, 760px);
-    min-height: 500px;
+    height: 100svh;
+    min-height: 560px;
     border-top: 1px solid var(--line-dark);
-    background: radial-gradient(120% 90% at 50% 10%, #1d2124 0%, #101314 58%, #0c0e0f 100%);
     overflow: hidden;
   }
-  #modelViewer { width: 100%; height: 100%; display: block; touch-action: none; }
-  .model-loading {
+  .walk-frame {
     position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
-    color: var(--muted-dark); font-size: 12px; letter-spacing: .24em; text-transform: uppercase;
-    background: rgba(14, 16, 17, .5);
-    transition: opacity .8s;
   }
-  .model-loading.hidden { opacity: 0; pointer-events: none; }
-  .model-loading::before {
-    content: ""; width: 44px; height: 44px;
-    border: 1px solid rgba(231, 208, 155, .25);
-    border-top-color: var(--gold-2);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  .walk-frame img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    will-change: opacity, transform;
   }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .model-ui {
-    position: absolute; z-index: 4;
-    left: 50%; bottom: 22px; transform: translateX(-50%);
-    display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
-    max-width: calc(100% - 28px);
-    background: rgba(12, 13, 14, .55);
-    border: 1px solid var(--line-dark);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 999px;
-    padding: 5px;
+  .walk-frame::after {
+    content: ""; position: absolute; inset: 0; z-index: 1;
+    background:
+      linear-gradient(0deg, rgba(9, 10, 11, .92) 0%, rgba(9, 10, 11, .1) 50%),
+      linear-gradient(180deg, rgba(9, 10, 11, .55) 0%, transparent 26%);
+    pointer-events: none;
   }
-  .model-ui button {
-    border: 0; cursor: pointer;
-    background: transparent; color: rgba(255, 255, 255, .66);
-    font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
-    padding: 10px 16px; border-radius: 999px;
-    transition: background .35s, color .35s;
+  .walk-copy {
+    position: absolute; z-index: 2;
+    left: 0; right: 0; bottom: clamp(28px, 6vh, 72px);
+    width: min(1280px, calc(100% - clamp(32px, 6vw, 96px)));
+    margin: 0 auto;
   }
-  .model-ui button.active, .model-ui button:hover { background: var(--gold-2); color: #171307; }
-  .model-light {
-    position: absolute; z-index: 4;
-    right: clamp(16px, 4vw, 44px); top: 22px;
-    display: flex; gap: 4px;
-    background: rgba(12, 13, 14, .55);
-    border: 1px solid var(--line-dark);
-    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border-radius: 999px; padding: 4px;
+  .walk-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+    color: var(--gold-2); margin-bottom: 14px;
   }
-  .model-light button {
-    border: 0; cursor: pointer;
-    background: transparent; color: rgba(255, 255, 255, .66);
-    font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-    padding: 8px 14px; border-radius: 999px;
-    transition: background .35s, color .35s;
+  .walk-stage {
+    position: absolute; inset: 0;
+    opacity: 0;
+    pointer-events: none;
   }
-  .model-light button.active, .model-light button:hover { background: var(--gold-2); color: #171307; }
-  @media (max-width: 640px) {
-    .model-light { top: auto; bottom: 76px; right: 50%; transform: translateX(50%); }
-    .model-ui button { padding: 9px 13px; font-size: 10px; letter-spacing: .08em; }
+  .walk-stage h3 {
+    font-size: clamp(26px, 3.6vw, 46px);
+    font-weight: 500; color: var(--white);
+    max-width: 640px; margin-bottom: 10px;
   }
-  .model-note {
-    position: absolute; z-index: 4;
+  .walk-stage p {
+    max-width: 460px; color: rgba(255, 255, 255, .68);
+    font-size: clamp(14px, 1.2vw, 16px); font-weight: 300;
+  }
+  .walk-progress {
+    position: absolute; z-index: 3;
+    right: clamp(16px, 4vw, 44px); top: 50%; transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .walk-progress span {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255, 255, 255, .28);
+    transition: background .4s, transform .4s;
+  }
+  .walk-progress span.active { background: var(--gold-2); transform: scale(1.5); }
+  .walk-count {
+    position: absolute; z-index: 3;
     left: clamp(16px, 4vw, 44px); top: 24px;
     font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
     color: rgba(255, 255, 255, .45);
     display: flex; align-items: center; gap: 10px;
   }
-  .model-note::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse-dot 2s infinite; }
+  .walk-count::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse-dot 2s infinite; }
   @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+  @media (max-width: 640px) {
+    .walk-pin { height: 100svh; }
+    .walk-stage h3 { max-width: 100%; }
+  }
 
   /* ============ GALLERY ============ */
   .gallery-section { background: var(--bg); overflow: hidden; }
@@ -821,7 +795,6 @@
     .hero-fact { padding: 18px 12px 22px 0; }
     .hero-fact:nth-child(2n) { border-right: 0; }
     .hero-fact:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.12); }
-    .daynight { position: static; width: max-content; margin: 26px 0 0; }
     .scroll-hint { display: none; }
     .btn { width: 100%; }
     .hero-actions .btn { width: auto; flex: 1 1 160px; }
@@ -829,10 +802,7 @@
     .about-badge { max-width: 200px; padding: 16px 18px; }
     .about-badge strong { font-size: 24px; }
     .kv > div { grid-template-columns: 1fr; gap: 4px; padding: 13px 0; }
-    .model-shell { min-height: 420px; height: 64svh; }
-    .model-note { display: none; }
-    .model-ui { left: 12px; right: 78px; transform: none; justify-content: space-between; bottom: 14px; }
-    .model-ui button { flex: 1; padding: 9px 4px; font-size: 10px; letter-spacing: .06em; }
+    .walk-count { display: none; }
     .floor-list { grid-template-columns: 1fr; }
     .plan-stage img { height: auto; max-height: 120vw; }
     .loc-grid { grid-template-columns: 1fr; }
@@ -898,7 +868,7 @@
   </a>
   <nav class="nav" aria-label="Навигация">
     <a href="#about" data-scroll>О проекте</a>
-    <a href="#model" data-scroll>3D-модель</a>
+    <a href="#walk" data-scroll>Прогулка</a>
     <a href="#gallery" data-scroll>Галерея</a>
     <a href="#plans" data-scroll>Планировки</a>
     <a href="#location" data-scroll>Локация</a>
@@ -912,7 +882,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" data-scroll style="transition-delay:.1s"><small>01</small>О проекте</a>
-  <a href="#model" data-scroll style="transition-delay:.16s"><small>02</small>3D-модель</a>
+  <a href="#walk" data-scroll style="transition-delay:.16s"><small>02</small>Прогулка</a>
   <a href="#gallery" data-scroll style="transition-delay:.22s"><small>03</small>Галерея</a>
   <a href="#plans" data-scroll style="transition-delay:.28s"><small>04</small>Планировки</a>
   <a href="#location" data-scroll style="transition-delay:.34s"><small>05</small>Локация</a>
@@ -925,22 +895,17 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-media" data-hero-parallax>
-      <img class="day" src="inal-prince-tower-7fl-view-01-corner-day.png" alt="Жилой комплекс Инал Принц Тауэр — дневной вид" />
-      <img class="night" src="inal-prince-tower-7fl-view-04-corner-evening.png" alt="Жилой комплекс Инал Принц Тауэр — вечерний вид" loading="lazy" />
+      <img src="photo-hero.jpg" alt="Жилой комплекс Инал Принц Тауэр — угловой вид на графитовый фасад и торговую галерею" />
     </div>
 
     <div>
       <div class="hero-inner">
-        <div class="daynight" role="group" aria-label="Время суток">
-          <button type="button" class="active" data-mode="day">День</button>
-          <button type="button" data-mode="night">Вечер</button>
-        </div>
         <span class="eyebrow" data-hero-fade>Жилой комплекс · Гагра</span>
         <h1 id="heroTitle">Инал Принц <em>Тауэр</em></h1>
         <p class="hero-sub" data-hero-fade>Современная архитектура на улице Абазгаа: графитовый фасад, панорамное остекление и торговая галерея на первом этаже.</p>
         <div class="hero-actions" data-hero-fade>
           <a class="btn btn-primary" href="#plans" data-scroll>Выбрать планировку</a>
-          <a class="btn btn-ghost" href="#model" data-scroll>Смотреть 3D-модель</a>
+          <a class="btn btn-ghost" href="#walk" data-scroll>Смотреть прогулку</a>
         </div>
       </div>
 
@@ -984,7 +949,7 @@
           </div>
         </div>
         <div class="about-media" data-reveal>
-          <div class="frame"><img src="inal-prince-tower-7fl-view-02-front-day.png" alt="Фасад жилого комплекса Инал Принц Тауэр" data-parallax-img /></div>
+          <div class="frame"><img src="photo-front.jpg" alt="Фасад жилого комплекса Инал Принц Тауэр" data-parallax-img /></div>
           <div class="about-badge">
             <strong>1-й этаж</strong>
             <span>торговая галерея: кофейня, цветочный и магазины у самого дома</span>
@@ -1039,29 +1004,43 @@
     </div>
   </section>
 
-  <!-- 3D MODEL -->
-  <section class="dark model-section section-pad" id="model" style="padding-bottom:0">
+  <!-- WALK -->
+  <section class="dark walk-section section-pad" id="walk" style="padding-bottom:0">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">02 · Интерактив</span>
-        <h2 data-split style="color:var(--white)">Покрутите дом своими руками</h2>
-        <p class="lead" data-reveal>Настоящая 3D-модель квартала — не видео и не картинка. Дом, собственный паркинг и благоустройство. Вращайте, приближайте, включайте вечернюю подсветку.</p>
+        <span class="eyebrow">02 · Прогулка</span>
+        <h2 data-split style="color:var(--white)">Пройдите вокруг дома взглядом</h2>
+        <p class="lead" data-reveal>Реальные рендеры проекта сменяют друг друга по ходу прокрутки — фасад, вход и балконы, как медленная прогулка вокруг здания.</p>
       </div>
     </div>
-    <div class="model-shell" data-cursor="Крутить">
-      <div id="modelViewer"></div>
-      <div class="model-loading" id="modelLoading">Собираем 3D-сцену</div>
-      <div class="model-note">Интерактивная модель · 6 этажей · паркинг</div>
-      <div class="model-light" role="group" aria-label="Освещение сцены">
-        <button type="button" data-scene-mode="day" class="active">☀ День</button>
-        <button type="button" data-scene-mode="night">☾ Вечер</button>
+    <div class="walk-pin" data-walk data-cursor="Листайте">
+      <div class="walk-frame">
+        <img src="photo-aerial.jpg" alt="Дом с высоты — среди старой застройки Гагры" data-walk-img />
+        <img src="photo-corner-green.jpg" alt="Угол дома и торговая галерея Flowers Coffee House" data-walk-img />
+        <img src="photo-facade-dark.jpg" alt="Графитовый фасад и панорамное остекление" data-walk-img />
+        <img src="photo-balcony-tree.jpg" alt="Глубокие балконы с видом на зелень" data-walk-img />
       </div>
-      <div class="model-ui" role="group" aria-label="Ракурсы модели">
-        <button type="button" data-view="corner" class="active">Ракурс</button>
-        <button type="button" data-view="side">Сбоку</button>
-        <button type="button" data-view="top">Сверху</button>
-        <button type="button" data-view="parking">Паркинг</button>
-        <button type="button" data-view="auto">⟳ Авто</button>
+      <div class="walk-count">Прогулка · 6 этажей · паркинг</div>
+      <div class="walk-copy">
+        <div class="walk-stage" data-walk-stage>
+          <h3>Дом среди старой Гагры</h3>
+          <p>Шесть этажей на улице Абазгаа — рядом с исторической застройкой района, в пешей доступности от моря.</p>
+        </div>
+        <div class="walk-stage" data-walk-stage>
+          <h3>Торговая галерея у входа</h3>
+          <p>Flowers + Coffee House на первом этаже — кофе и цветы прямо у подъезда, без выхода со двора.</p>
+        </div>
+        <div class="walk-stage" data-walk-stage>
+          <h3>Графитовый фасад</h3>
+          <p>Тёмный графит и светлый камень, панорамное остекление от пола до потолка на каждом этаже.</p>
+        </div>
+        <div class="walk-stage" data-walk-stage>
+          <h3>Балконы с видом на горы</h3>
+          <p>Глубокие закруглённые балконы — свой воздух и вид на зелёные склоны Кавказа.</p>
+        </div>
+      </div>
+      <div class="walk-progress" data-walk-progress>
+        <span class="active"></span><span></span><span></span><span></span>
       </div>
     </div>
   </section>
@@ -1071,30 +1050,30 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">03 · Галерея</span>
-        <h2 data-split style="color:var(--white)">Дом в четырёх ракурсах — днём и вечером</h2>
+        <h2 data-split style="color:var(--white)">Дом в реальных рендерах проекта</h2>
       </div>
     </div>
     <div class="gallery-pin" id="galleryPin">
       <div class="gallery-track" id="galleryTrack">
         <figure class="gallery-card" data-cursor="Смотреть">
-          <div class="g-frame"><img src="inal-prince-tower-7fl-view-01-corner-day.png" alt="Угловой ракурс, день" data-lightbox data-title="Угловой ракурс · день" /></div>
-          <figcaption class="gallery-caption"><b>01</b> Угловой ракурс · день</figcaption>
+          <div class="g-frame"><img src="photo-street.jpg" alt="Вид с улицы Абазгаа" data-lightbox data-title="Вид с улицы Абазгаа" /></div>
+          <figcaption class="gallery-caption"><b>01</b> Вид с улицы Абазгаа</figcaption>
         </figure>
         <figure class="gallery-card" data-cursor="Смотреть">
-          <div class="g-frame"><img src="inal-prince-tower-7fl-view-02-front-day.png" alt="Главный фасад, день" loading="lazy" data-lightbox data-title="Главный фасад · день" /></div>
-          <figcaption class="gallery-caption"><b>02</b> Главный фасад · день</figcaption>
+          <div class="g-frame"><img src="photo-coffee.jpg" alt="Flowers + Coffee House на первом этаже" loading="lazy" data-lightbox data-title="Flowers + Coffee House" /></div>
+          <figcaption class="gallery-caption"><b>02</b> Flowers + Coffee House</figcaption>
         </figure>
         <figure class="gallery-card" data-cursor="Смотреть">
-          <div class="g-frame"><img src="inal-prince-tower-view-03-side-day.png" alt="Боковой ракурс, день" loading="lazy" data-lightbox data-title="Боковой ракурс · день" /></div>
-          <figcaption class="gallery-caption"><b>03</b> Боковой ракурс · день</figcaption>
+          <div class="g-frame"><img src="photo-entrance.jpg" alt="Входная группа и витрины галереи" loading="lazy" data-lightbox data-title="Входная группа" /></div>
+          <figcaption class="gallery-caption"><b>03</b> Входная группа</figcaption>
         </figure>
         <figure class="gallery-card" data-cursor="Смотреть">
-          <div class="g-frame"><img src="inal-prince-tower-7fl-view-04-corner-evening.png" alt="Вечернее освещение фасада" loading="lazy" data-lightbox data-title="Вечернее освещение" /></div>
-          <figcaption class="gallery-caption"><b>04</b> Вечернее освещение</figcaption>
+          <div class="g-frame"><img src="photo-texture.jpg" alt="Фактура графитового фасада крупным планом" loading="lazy" data-lightbox data-title="Фактура фасада" /></div>
+          <figcaption class="gallery-caption"><b>04</b> Фактура фасада</figcaption>
         </figure>
         <figure class="gallery-card" data-cursor="Смотреть">
-          <div class="g-frame"><img src="inal-prince-tower-view-04-corner-evening.png" alt="Вечерний вид с улицы" loading="lazy" data-lightbox data-title="Вечерний вид с улицы" /></div>
-          <figcaption class="gallery-caption"><b>05</b> Вечерний вид с улицы</figcaption>
+          <div class="g-frame"><img src="photo-wide.jpg" alt="Дом целиком в застройке улицы Абазгаа" loading="lazy" data-lightbox data-title="Дом в застройке улицы" /></div>
+          <figcaption class="gallery-caption"><b>05</b> Дом в застройке улицы</figcaption>
         </figure>
       </div>
       <div class="gallery-progress"><span id="galleryBar"></span></div>
@@ -1265,6 +1244,12 @@
   if (REDUCED) document.documentElement.classList.add('reduced');
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  /* ---------- WALK: базовое состояние (на случай reduced-motion / без GSAP) ---------- */
+  var walkImgsInit = document.querySelectorAll('[data-walk-img]');
+  var walkStagesInit = document.querySelectorAll('[data-walk-stage]');
+  if (walkImgsInit.length) walkImgsInit[0].style.opacity = '1';
+  if (walkStagesInit.length) walkStagesInit[0].style.opacity = '1';
+
   /* ---------- SMOOTH SCROLL (Lenis) ---------- */
   var lenis = null;
   if (!REDUCED && typeof Lenis !== 'undefined') {
@@ -1314,7 +1299,7 @@
       playHeroIntro();
     }, 350);
   }
-  var heroImg = document.querySelector('.hero-media img.day');
+  var heroImg = document.querySelector('.hero-media img');
   if (heroImg.complete) setTimeout(finishPreloader, 700);
   else {
     heroImg.addEventListener('load', finishPreloader);
@@ -1421,17 +1406,6 @@
     });
   }
 
-  /* ---------- DAY / NIGHT HERO ---------- */
-  var hero = document.getElementById('hero');
-  document.querySelectorAll('.daynight button').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.daynight button').forEach(function (other) { other.classList.remove('active'); });
-      btn.classList.add('active');
-      hero.classList.toggle('night-mode', btn.dataset.mode === 'night');
-      window.dispatchEvent(new CustomEvent('scene:daynight', { detail: { mode: btn.dataset.mode } }));
-    });
-  });
-
   /* ---------- SCROLL ANIMATIONS ---------- */
   if (!REDUCED && hasGsap) {
     gsap.registerPlugin(ScrollTrigger);
@@ -1488,6 +1462,44 @@
           }
         }
       });
+    }
+
+    // Прогулка вокруг дома — пинned кроссфейд реальных рендеров
+    var walkPin = document.querySelector('[data-walk]');
+    if (walkPin) {
+      var wImgs = walkPin.querySelectorAll('[data-walk-img]');
+      var wStages = walkPin.querySelectorAll('[data-walk-stage]');
+      var wDots = walkPin.querySelectorAll('[data-walk-progress] span');
+      var segments = wImgs.length;
+
+      gsap.set(wImgs[0], { opacity: 1 });
+      gsap.set(wStages[0], { opacity: 1, y: 0 });
+
+      var walkTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: walkPin,
+          start: 'top top',
+          end: function () { return '+=' + Math.round(window.innerHeight * (segments - 1) * 1.15); },
+          pin: true,
+          scrub: 0.7,
+          invalidateOnRefresh: true,
+          onUpdate: function (self) {
+            var idx = Math.min(segments - 1, Math.floor(self.progress * segments));
+            wDots.forEach(function (d, i) { d.classList.toggle('active', i === idx); });
+          }
+        }
+      });
+
+      for (var wi = 0; wi < segments; wi++) {
+        walkTl.to(wImgs[wi], { scale: 1.09, duration: 1, ease: 'none' }, wi);
+        if (wi > 0) {
+          walkTl
+            .to(wImgs[wi - 1], { opacity: 0, duration: 0.32 }, wi - 0.16)
+            .to(wImgs[wi], { opacity: 1, duration: 0.32 }, wi - 0.16)
+            .to(wStages[wi - 1], { opacity: 0, y: -16, duration: 0.28 }, wi - 0.2)
+            .to(wStages[wi], { opacity: 1, y: 0, duration: 0.28 }, wi - 0.02);
+        }
+      }
     }
   }
 
@@ -1557,398 +1569,5 @@
 })();
 </script>
 
-<!-- 3D MODEL -->
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
-    "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/"
-  }
-}
-</script>
-<script type="module">
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
-const viewer = document.getElementById('modelViewer');
-const loadingEl = document.getElementById('modelLoading');
-
-/* ---------- Рендерер ---------- */
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.05;
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-viewer.appendChild(renderer.domElement);
-
-/* ---------- Сцена и окружение ---------- */
-const scene = new THREE.Scene();
-scene.fog = new THREE.Fog(0x9fb2c2, 90, 260);
-
-const pmrem = new THREE.PMREMGenerator(renderer);
-scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-
-// Небо-градиент (перекрашивается день/вечер)
-const skyUniforms = {
-  top: { value: new THREE.Color(0x8fb6d8) },
-  bottom: { value: new THREE.Color(0xeaddc6) }
-};
-const sky = new THREE.Mesh(
-  new THREE.SphereGeometry(360, 32, 16),
-  new THREE.ShaderMaterial({
-    side: THREE.BackSide, depthWrite: false, fog: false, uniforms: skyUniforms,
-    vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
-    fragmentShader: 'varying vec3 vP; uniform vec3 top; uniform vec3 bottom; void main(){ float h = clamp(normalize(vP).y*0.5+0.5,0.0,1.0); gl_FragColor = vec4(mix(bottom, top, pow(h,0.7)),1.0); }'
-  })
-);
-scene.add(sky);
-
-/* ---------- Камера ---------- */
-const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 800);
-const VIEWS = {
-  corner:  { pos: new THREE.Vector3(40, 23, 42),  target: new THREE.Vector3(0, 8, 1) },
-  side:    { pos: new THREE.Vector3(-48, 15, 6),   target: new THREE.Vector3(0, 8, -1) },
-  top:     { pos: new THREE.Vector3(4, 64, 30),    target: new THREE.Vector3(-3, 1, 6) },
-  parking: { pos: new THREE.Vector3(-34, 10, 32),  target: new THREE.Vector3(-14, 2, 8) }
-};
-camera.position.copy(VIEWS.corner.pos);
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.06;
-controls.target.copy(VIEWS.corner.target);
-controls.minDistance = 12;
-controls.maxDistance = 150;
-controls.maxPolarAngle = Math.PI * 0.5;
-controls.autoRotate = true;
-controls.autoRotateSpeed = 0.6;
-
-/* ---------- Свет ---------- */
-const hemi = new THREE.HemisphereLight(0xdcecff, 0x2b2620, 2.15);
-scene.add(hemi);
-const sun = new THREE.DirectionalLight(0xfff2dc, 3.0);
-sun.position.set(-26, 46, 24);
-sun.castShadow = true;
-sun.shadow.mapSize.set(2048, 2048);
-sun.shadow.camera.left = -48; sun.shadow.camera.right = 48;
-sun.shadow.camera.top = 48; sun.shadow.camera.bottom = -48;
-sun.shadow.camera.near = 1; sun.shadow.camera.far = 180;
-sun.shadow.bias = -0.0004;
-scene.add(sun);
-const rim = new THREE.DirectionalLight(0x9db8ff, 0.7);
-rim.position.set(34, 20, -38);
-scene.add(rim);
-
-/* ---------- Материалы ---------- */
-const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0x6b5324, emissive: 0xffcf87, emissiveIntensity: 0, roughness: 0.4, metalness: 0.6 });
-const lampTipMat  = new THREE.MeshStandardMaterial({ color: 0x2c2716, emissive: 0xffd28a, emissiveIntensity: 0, roughness: 0.5 });
-const M = {
-  graphite:     new THREE.MeshStandardMaterial({ color: 0x2b2f34, roughness: 0.6, metalness: 0.18 }),
-  graphiteDark: new THREE.MeshStandardMaterial({ color: 0x21262b, roughness: 0.55, metalness: 0.2 }),
-  stone:        new THREE.MeshStandardMaterial({ color: 0xded7c7, roughness: 0.78, metalness: 0.02 }),
-  gold:         new THREE.MeshStandardMaterial({ color: 0xc9a55c, roughness: 0.3, metalness: 0.95, envMapIntensity: 1.3 }),
-  glass:        new THREE.MeshPhysicalMaterial({ color: 0x2a3c4c, roughness: 0.06, metalness: 0, envMapIntensity: 1.6, clearcoat: 1, clearcoatRoughness: 0.06, transparent: true, opacity: 0.9, emissive: 0xffd9a6, emissiveIntensity: 0 }),
-  railGlass:    new THREE.MeshPhysicalMaterial({ color: 0xb0c6d4, roughness: 0.05, metalness: 0, envMapIntensity: 1.5, transparent: true, opacity: 0.22 }),
-  asphalt:      new THREE.MeshStandardMaterial({ color: 0x26282b, roughness: 0.96 }),
-  paving:       new THREE.MeshStandardMaterial({ color: 0x928f86, roughness: 0.85 }),
-  pavingLight:  new THREE.MeshStandardMaterial({ color: 0xb4ae9f, roughness: 0.82 }),
-  line:         new THREE.MeshStandardMaterial({ color: 0xe7e2d4, roughness: 0.9 }),
-  grass:        new THREE.MeshStandardMaterial({ color: 0x4f7a43, roughness: 0.95 }),
-  trunk:        new THREE.MeshStandardMaterial({ color: 0x5a4632, roughness: 0.9 }),
-  leaf:         new THREE.MeshStandardMaterial({ color: 0x3c6b39, roughness: 0.85 }),
-  palm:         new THREE.MeshStandardMaterial({ color: 0x4f8f3e, roughness: 0.8, side: THREE.DoubleSide }),
-  tyre:         new THREE.MeshStandardMaterial({ color: 0x141414, roughness: 0.85 }),
-  chrome:       new THREE.MeshStandardMaterial({ color: 0x9aa0a6, roughness: 0.3, metalness: 0.9 }),
-  carGlass:     new THREE.MeshPhysicalMaterial({ color: 0x0c1418, roughness: 0.08, metalness: 0, transparent: true, opacity: 0.72, envMapIntensity: 1.4 }),
-  headLight:    new THREE.MeshStandardMaterial({ color: 0x20242a, emissive: 0xfff2cf, emissiveIntensity: 0 }),
-  redLight:     new THREE.MeshStandardMaterial({ color: 0x3a0f0f, emissive: 0xff2a12, emissiveIntensity: 0.25 })
-};
-
-const windowPanels = [];  // остеклённые панели, зажигаются вечером
-const lampLights = [];    // фонари
-
-function box(w, h, d, mat, x = 0, y = 0, z = 0, cast = true, rec = true) {
-  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat);
-  m.position.set(x, y, z); m.castShadow = cast; m.receiveShadow = rec;
-  return m;
-}
-function glassPanel(w, h, d, x, y, z) {
-  const mat = M.glass.clone();
-  const m = box(w, h, d, mat, x, y, z, false, false);
-  m.userData.lit = Math.random() < 0.55 ? (0.2 + Math.random() * 0.55) : 0; // часть окон «горит»
-  windowPanels.push(m);
-  return m;
-}
-function signTexture(text, bg, fg) {
-  const c = document.createElement('canvas'); c.width = c.height = 128;
-  const g = c.getContext('2d');
-  g.fillStyle = bg; g.fillRect(0, 0, 128, 128);
-  g.fillStyle = fg; g.font = 'bold 84px Georgia, serif';
-  g.textAlign = 'center'; g.textBaseline = 'middle';
-  g.fillText(text, 64, 70);
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
-}
-
-/* ---------- Здание: 6 этажей ---------- */
-const BW = 18, BD = 13;
-const heights = [4.6, 3.1, 3.1, 3.1, 3.1, 3.1]; // 1 коммерческий + 5 жилых
-const totalH = heights.reduce((a, b) => a + b, 0);
-const building = new THREE.Group();
-scene.add(building);
-
-building.add(box(BW + 1.8, 0.7, BD + 1.8, M.stone, 0, 0.35, 0));                       // цоколь
-building.add(box(BW - 1.2, totalH, 0.8, M.graphiteDark, 0, totalH / 2 + 0.7, -(BD / 2 - 0.35))); // глухая задняя стена
-const pierX = BW / 2 - 0.4, pierZ = BD / 2 - 0.4, baseY = 0.7;
-[[pierX, pierZ], [-pierX, pierZ], [pierX, -pierZ], [-pierX, -pierZ]].forEach(([x, z]) =>
-  building.add(box(0.9, totalH, 0.9, M.graphite, x, totalH / 2 + baseY, z)));          // угловые пилоны
-[-6, 6].forEach(x => building.add(box(0.55, totalH, 0.55, M.graphite, x, totalH / 2 + baseY, pierZ))); // фронтальные пилоны
-
-const frontZ = BD / 2 - 0.35;
-let y = baseY;
-heights.forEach((h, i) => {
-  const isGround = i === 0;
-  const cy = y + (h - 0.5) / 2 + 0.25;
-  // фронтальное остекление (3 секции между пилонами)
-  [-6, 0, 6].forEach(px => building.add(glassPanel(5.2, h - 0.5, 0.14, px, cy, frontZ)));
-  // боковое остекление
-  [-(BW / 2 - 0.35), BW / 2 - 0.35].forEach(px => building.add(glassPanel(0.14, h - 0.5, BD - 2.6, px, cy, 0)));
-  // межэтажная плита-карниз
-  building.add(box(BW + 0.8, 0.28, BD + 0.8, M.stone, 0, y + h - 0.14, 0));
-  // балконы жилых этажей
-  if (!isGround) {
-    building.add(box(BW - 1.0, 1.02, 0.06, M.railGlass, 0, y + 0.55, BD / 2 + 0.5, false, false));
-    building.add(box(BW - 1.0, 0.06, 0.13, M.gold, 0, y + 1.06, BD / 2 + 0.52));
-    [-(BW / 2 - 0.1), BW / 2 - 0.1].forEach(px => building.add(box(0.06, 1.02, 3.2, M.railGlass, px, y + 0.55, BD / 2 - 1.4, false, false)));
-  } else {
-    // витрины 1-го этажа: золотые вертикальные фины
-    for (let x = -7.5; x <= 7.5; x += 1.7) building.add(box(0.1, h - 0.7, 0.16, M.gold, x, y + (h - 0.7) / 2 + 0.15, frontZ + 0.06));
-    // входная группа
-    building.add(box(5, h - 0.8, 0.5, M.graphiteDark, 0, y + (h - 0.8) / 2 + 0.15, frontZ - 0.15));
-    building.add(box(3.4, h - 1.1, 0.14, M.carGlass, 0, y + (h - 1.1) / 2 + 0.2, frontZ + 0.05, false, false));
-  }
-  y += h;
-});
-
-// Входной козырёк с золотой подсветкой снизу + бренд-плита
-const canopyY = baseY + heights[0] - 0.15;
-building.add(box(7.2, 0.3, 2.8, M.graphite, 0, canopyY, BD / 2 + 1.2));
-building.add(box(6.4, 0.06, 2.2, goldGlowMat, 0, canopyY - 0.17, BD / 2 + 1.2, false, false));
-const brand = box(4.2, 0.8, 0.12, new THREE.MeshStandardMaterial({ color: 0x14161b, emissive: 0xc9a55c, emissiveIntensity: 0.35, emissiveMap: signTexture('IPT', '#14161b', '#c9a55c'), map: signTexture('IPT', '#14161b', '#c9a55c'), roughness: 0.5 }), 0, canopyY + 1.0, frontZ + 0.1, false, false);
-building.add(brand);
-
-/* ---------- Крыша: терраса ---------- */
-const roofY = baseY + totalH;
-building.add(box(BW - 1.2, 0.12, BD - 1.2, M.pavingLight, 0, roofY + 0.06, 0));
-// парапет
-building.add(box(BW + 0.6, 0.9, 0.4, M.graphiteDark, 0, roofY + 0.45, BD / 2 + 0.05));
-building.add(box(BW + 0.6, 0.9, 0.4, M.graphiteDark, 0, roofY + 0.45, -(BD / 2 + 0.05)));
-building.add(box(0.4, 0.9, BD + 0.6, M.graphiteDark, BW / 2 + 0.05, roofY + 0.45, 0));
-building.add(box(0.4, 0.9, BD + 0.6, M.graphiteDark, -(BW / 2 + 0.05), roofY + 0.45, 0));
-// перголы и зелень на крыше
-[[-4.5, -3], [-4.5, 2], [1.5, -3], [1.5, 2]].forEach(([x, z]) => building.add(box(0.16, 2.4, 0.16, M.graphite, x, roofY + 1.2, z)));
-for (let x = -4.5; x <= 1.5; x += 0.7) building.add(box(0.08, 0.08, 5.4, M.graphite, x, roofY + 2.4, -0.5));
-building.add(box(2.6, 0.6, 1.6, M.leaf, 5.5, roofY + 0.4, -3.5));
-building.add(box(2.6, 0.6, 1.6, M.leaf, 5.5, roofY + 0.4, 3.5));
-building.add(box(3, 1.3, 2, M.graphite, -6, roofY + 0.75, -3.5)); // тех-блок
-
-/* ---------- Земля / участок ---------- */
-const ground = box(220, 0.4, 160, M.paving, 0, -0.2, 20, false, true);
-scene.add(ground);
-// плаза перед домом
-scene.add(box(BW + 22, 0.06, 10, M.pavingLight, -2, 0.04, BD / 2 + 6, false, true));
-// тротуар и улица
-scene.add(box(200, 0.05, 3.4, M.pavingLight, 0, 0.05, 15.5, false, true));
-scene.add(box(200, 0.06, 13, M.asphalt, 0, 0.06, 24, false, true));
-for (let x = -90; x <= 90; x += 6) scene.add(box(2.6, 0.02, 0.28, M.line, x, 0.1, 24, false, false)); // разметка полосы
-// газоны
-scene.add(box(200, 0.05, 4, M.grass, 0, 0.05, 32, false, true));
-
-/* ---------- Наземный паркинг с машинами ---------- */
-function makeCar(color) {
-  const g = new THREE.Group();
-  const paint = new THREE.MeshPhysicalMaterial({ color, roughness: 0.32, metalness: 0.5, clearcoat: 0.85, clearcoatRoughness: 0.2, envMapIntensity: 1.3 });
-  g.add(box(4.0, 0.72, 1.82, paint, 0, 0.72, 0));
-  g.add(box(4.1, 0.42, 1.86, new THREE.MeshStandardMaterial({ color: 0x1b1b1d, roughness: 0.7 }), 0, 0.42, 0));
-  g.add(box(2.3, 0.7, 1.6, paint, -0.15, 1.3, 0));
-  g.add(box(2.15, 0.6, 1.66, M.carGlass, -0.15, 1.32, 0, false, false));
-  const wheelGeo = new THREE.CylinderGeometry(0.36, 0.36, 0.26, 16);
-  [[1.32, 0.95], [1.32, -0.95], [-1.32, 0.95], [-1.32, -0.95]].forEach(([x, z]) => {
-    const w = new THREE.Mesh(wheelGeo, M.tyre); w.rotation.x = Math.PI / 2; w.position.set(x, 0.36, z); w.castShadow = true; g.add(w);
-    const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.28, 10), M.chrome); hub.rotation.x = Math.PI / 2; hub.position.set(x, 0.36, z); g.add(hub);
-  });
-  [0.55, -0.55].forEach(z => { g.add(box(0.1, 0.16, 0.34, M.headLight, 2.02, 0.72, z, false, false)); g.add(box(0.1, 0.16, 0.34, M.redLight, -2.02, 0.72, z, false, false)); });
-  return g;
-}
-const carColors = [0xf2f2f2, 0x1d1f22, 0x9aa2ab, 0x233a5e, 0x7a1e22, 0x3c4046, 0xcabfa1];
-const parkGroup = new THREE.Group(); scene.add(parkGroup);
-parkGroup.add(box(17, 0.07, 15, M.asphalt, -16, 0.07, 9, false, true)); // площадка паркинга
-// разметка мест (два ряда)
-let ci = 0;
-[[4.4, 0], [13.6, 1]].forEach(([bz, row]) => {
-  for (let i = 0; i < 5; i++) {
-    const bx = -22.5 + i * 2.7;
-    parkGroup.add(box(0.1, 0.02, 4.8, M.line, bx, 0.11, bz, false, false));
-    if ((row + i) % 2 === 0 && ci < 7) {                     // часть мест занята
-      const car = makeCar(carColors[ci % carColors.length]);
-      car.rotation.y = Math.PI / 2;
-      car.position.set(bx + 1.35, 0, bz);
-      parkGroup.add(car); ci++;
-    }
-  }
-  parkGroup.add(box(13.5, 0.1, 0.1, M.line, -16, 0.11, bz + (row ? 2.4 : -2.4), false, false));
-});
-// пара машин на улице
-const street1 = makeCar(0x0e0f11); street1.position.set(-14, 0, 22); scene.add(street1);
-const street2 = makeCar(0xe8e8e8); street2.rotation.y = Math.PI; street2.position.set(18, 0, 26); scene.add(street2);
-
-/* ---------- Подземный паркинг: рампа + знак ---------- */
-const ramp = new THREE.Group(); ramp.position.set(15.5, 0, 6); scene.add(ramp);
-const rampFloor = box(6, 0.3, 5, M.asphalt, 0, -1.4, 0); rampFloor.rotation.x = 0.46; ramp.add(rampFloor);
-ramp.add(box(6.4, 2.4, 0.4, M.graphite, 0, -0.6, 2.6));   // борта
-ramp.add(box(6.4, 2.4, 0.4, M.graphite, 0, -0.6, -2.6));
-ramp.add(box(0.4, 3.4, 5.4, M.graphiteDark, -3, -0.9, 0)); // портал въезда
-[-1.4, 1.4].forEach(z => ramp.add(box(2.4, 0.02, 0.2, M.line, 0.5, 0.05, z, false, false))); // стрелки-разметка
-// пилон «P»
-const pMat = new THREE.MeshStandardMaterial({ color: 0x16345f, emissive: 0x3a6bd6, emissiveIntensity: 0.35, emissiveMap: signTexture('P', '#16345f', '#ffffff'), map: signTexture('P', '#16345f', '#ffffff'), roughness: 0.5 });
-ramp.add(box(0.16, 3, 0.16, M.graphite, 3.3, 1.5, 2.7));
-ramp.add(box(1.1, 1.1, 0.12, pMat, 3.3, 3, 2.7, false, false));
-// шлагбаум (поднят)
-const barrier = box(3.4, 0.12, 0.12, new THREE.MeshStandardMaterial({ color: 0xd23b2a, roughness: 0.6 }), 0, 1.6, 3);
-barrier.rotation.z = 0.5; ramp.add(barrier);
-ramp.add(box(0.2, 1.2, 0.2, M.graphite, 1.7, 0.9, 3));
-
-/* ---------- Озеленение ---------- */
-function makePalm(x, z, s = 1) {
-  const g = new THREE.Group();
-  const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.28, 5.4, 10), M.trunk);
-  tr.position.y = 2.7; tr.castShadow = true; g.add(tr);
-  const frond = new THREE.PlaneGeometry(3.6, 0.85); frond.translate(1.8, 0, 0);
-  for (let i = 0; i < 8; i++) {
-    const f = new THREE.Mesh(frond, M.palm);
-    f.position.y = 5.4; f.rotation.order = 'YXZ';
-    f.rotation.y = i * Math.PI / 4; f.rotation.z = -0.45 - Math.random() * 0.15;
-    f.castShadow = true; g.add(f);
-  }
-  g.position.set(x, 0, z); g.scale.setScalar(s); return g;
-}
-function makeTree(x, z, s = 1) {
-  const g = new THREE.Group();
-  const tr = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.32, 1.9, 8), M.trunk);
-  tr.position.y = 0.95; tr.castShadow = true; g.add(tr);
-  const f1 = new THREE.Mesh(new THREE.IcosahedronGeometry(1.8, 0), M.leaf);
-  f1.position.y = 3.0; f1.scale.set(1, 1.15, 1); f1.castShadow = true; g.add(f1);
-  const f2 = new THREE.Mesh(new THREE.IcosahedronGeometry(1.2, 0), M.leaf);
-  f2.position.set(0.8, 2.2, 0.4); f2.castShadow = true; g.add(f2);
-  g.position.set(x, 0, z); g.scale.setScalar(s); return g;
-}
-[[-11, 12.5], [-2, 13.5], [7, 12.5], [13, 12], [-26, 4], [-26, 14]].forEach(([x, z], i) => scene.add(makePalm(x, z, 0.9 + (i % 3) * 0.12)));
-[[24, 12], [-30, 20], [26, 18], [-6, 30]].forEach(([x, z]) => scene.add(makeTree(x, z, 0.95)));
-// живые изгороди вдоль дома
-[-1, 1].forEach(s => scene.add(box(9, 0.7, 0.7, M.grass, s * 6.5, 0.35, BD / 2 + 2.6, true, true)));
-
-/* ---------- Фонари ---------- */
-function makeLamp(x, z) {
-  const g = new THREE.Group();
-  const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.12, 5, 10), M.graphite);
-  pole.position.y = 2.5; pole.castShadow = true; g.add(pole);
-  const head = new THREE.Mesh(new THREE.SphereGeometry(0.26, 14, 12), lampTipMat);
-  head.position.y = 5.05; g.add(head);
-  const pl = new THREE.PointLight(0xffd7a0, 0, 22, 2); pl.position.set(0, 4.9, 0);
-  pl.userData.max = 1.4; g.add(pl); lampLights.push(pl);
-  g.position.set(x, 0, z); return g;
-}
-[[-24, 4], [-24, 15], [10, 12], [-2, 12], [16, 20], [-16, 20]].forEach(([x, z]) => scene.add(makeLamp(x, z)));
-
-/* ---------- Смена времени суток ---------- */
-const dayP = { skyTop: new THREE.Color(0x8fb6d8), skyBot: new THREE.Color(0xeaddc6), fog: new THREE.Color(0x9fb2c2), sunCol: new THREE.Color(0xfff2dc), sunPos: new THREE.Vector3(-26, 46, 24), hemi: 2.15, sun: 3.0, rim: 0.7, exp: 1.05 };
-const nightP = { skyTop: new THREE.Color(0x081120), skyBot: new THREE.Color(0x1b2a3b), fog: new THREE.Color(0x0b1622), sunCol: new THREE.Color(0x9fb6de), sunPos: new THREE.Vector3(22, 24, -28), hemi: 0.5, sun: 0.55, rim: 0.22, exp: 1.18 };
-const state = { mix: 0 };
-function applyState() {
-  const t = state.mix;
-  skyUniforms.top.value.lerpColors(dayP.skyTop, nightP.skyTop, t);
-  skyUniforms.bottom.value.lerpColors(dayP.skyBot, nightP.skyBot, t);
-  scene.fog.color.lerpColors(dayP.fog, nightP.fog, t);
-  hemi.intensity = THREE.MathUtils.lerp(dayP.hemi, nightP.hemi, t);
-  sun.intensity = THREE.MathUtils.lerp(dayP.sun, nightP.sun, t);
-  sun.color.lerpColors(dayP.sunCol, nightP.sunCol, t);
-  sun.position.lerpVectors(dayP.sunPos, nightP.sunPos, t);
-  rim.intensity = THREE.MathUtils.lerp(dayP.rim, nightP.rim, t);
-  renderer.toneMappingExposure = THREE.MathUtils.lerp(dayP.exp, nightP.exp, t);
-  windowPanels.forEach(p => { p.material.emissiveIntensity = t * p.userData.lit; });
-  lampLights.forEach(l => { l.intensity = t * l.userData.max; });
-  lampTipMat.emissiveIntensity = t * 1.8;
-  goldGlowMat.emissiveIntensity = t * 1.1;
-  M.headLight.emissiveIntensity = t * 1.5;
-  M.redLight.emissiveIntensity = 0.25 + t * 0.9;
-}
-applyState();
-function setSceneMode(mode) {
-  const target = mode === 'night' ? 1 : 0;
-  if (window.gsap) gsap.to(state, { mix: target, duration: 1.1, ease: 'power2.inOut', onUpdate: applyState });
-  else { state.mix = target; applyState(); }
-}
-function applyMode(mode) {
-  setSceneMode(mode);
-  document.querySelectorAll('.model-light button').forEach(b => b.classList.toggle('active', b.dataset.sceneMode === mode));
-}
-window.addEventListener('scene:daynight', e => applyMode(e.detail.mode));
-document.querySelectorAll('.model-light button').forEach(b => b.addEventListener('click', () => {
-  applyMode(b.dataset.sceneMode);
-  const hero = document.getElementById('hero');
-  document.querySelectorAll('.daynight button').forEach(x => x.classList.toggle('active', x.dataset.mode === b.dataset.sceneMode));
-  if (hero) hero.classList.toggle('night-mode', b.dataset.sceneMode === 'night');
-}));
-
-/* ---------- Автоворот: пауза при взаимодействии ---------- */
-let idleTimer = null;
-function pauseAutoRotate() {
-  controls.autoRotate = false;
-  clearTimeout(idleTimer);
-  idleTimer = setTimeout(() => {
-    const autoBtn = document.querySelector('.model-ui [data-view="auto"]');
-    if (autoBtn && autoBtn.classList.contains('active')) controls.autoRotate = true;
-  }, 5000);
-}
-renderer.domElement.addEventListener('pointerdown', pauseAutoRotate);
-renderer.domElement.addEventListener('wheel', pauseAutoRotate, { passive: true });
-
-/* ---------- Кнопки ракурсов ---------- */
-const viewButtons = document.querySelectorAll('.model-ui button');
-viewButtons.forEach(btn => btn.addEventListener('click', () => {
-  viewButtons.forEach(o => o.classList.remove('active'));
-  btn.classList.add('active');
-  const view = btn.dataset.view;
-  if (view === 'auto') { controls.autoRotate = true; return; }
-  controls.autoRotate = false;
-  const to = VIEWS[view];
-  if (window.gsap) {
-    gsap.to(camera.position, { x: to.pos.x, y: to.pos.y, z: to.pos.z, duration: 1.6, ease: 'power3.inOut' });
-    gsap.to(controls.target, { x: to.target.x, y: to.target.y, z: to.target.z, duration: 1.6, ease: 'power3.inOut' });
-  } else { camera.position.copy(to.pos); controls.target.copy(to.target); }
-}));
-document.querySelector('.model-ui [data-view="auto"]').classList.add('active');
-document.querySelector('.model-ui [data-view="corner"]').classList.remove('active');
-
-/* ---------- Рендер ---------- */
-function resize() {
-  const w = viewer.clientWidth || 1, h = viewer.clientHeight || 1;
-  camera.aspect = w / h; camera.updateProjectionMatrix();
-  renderer.setSize(w, h);
-}
-window.addEventListener('resize', resize);
-resize();
-requestAnimationFrame(() => loadingEl.classList.add('hidden'));
-
-let visible = false;
-new IntersectionObserver(entries => { visible = entries[0].isIntersecting; }, { threshold: 0.02 }).observe(viewer);
-renderer.setAnimationLoop(() => {
-  if (!visible) return;
-  controls.update();
-  renderer.render(scene, camera);
-});
-</script>
 </body>
 </html>
