@@ -8,12 +8,25 @@
 <meta name="keywords" content="квартиры в Гагре, ЖК Гагра, недвижимость Абхазия, купить квартиру у моря, Инал Принц Тауэр, Абазгаа 49" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#0e0f10" />
+<link rel="canonical" href="https://inalprincetower.com/" />
 <meta property="og:title" content="Инал Принц Тауэр — премиум-квартиры у моря в Гагре" />
 <meta property="og:description" content="6 этажей, собственный паркинг, торговая галерея и панорамное остекление на ул. Абазгаа, 49. Реальные рендеры дома, планировки и заявка в один клик." />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="photo-hero.jpg" />
+<meta property="og:url" content="https://inalprincetower.com/" />
+<meta property="og:site_name" content="Инал Принц Тауэр" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:image" content="https://inalprincetower.com/photo-hero.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:alt" content="Инал Принц Тауэр — фасад жилого комплекса" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Инал Принц Тауэр — премиум-квартиры у моря в Гагре" />
+<meta name="twitter:description" content="6 этажей, собственный паркинг, торговая галерея и панорамное остекление на ул. Абазгаа, 49." />
+<meta name="twitter:image" content="https://inalprincetower.com/photo-hero.jpg" />
 <link rel="preload" as="image" href="photo-hero.jpg" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230e0f10'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23c8a45d' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='26' fill='%23e7d09b' text-anchor='middle'%3EIP%3C/text%3E%3C/svg%3E" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -280,7 +293,6 @@
     font-weight: 500;
     color: var(--white);
   }
-  .hero h1 em { font-style: italic; color: var(--gold-2); }
   .hero-sub {
     max-width: 460px;
     color: rgba(255, 255, 255, .74);
@@ -540,6 +552,18 @@
     font-size: 13px; color: var(--muted-dark);
   }
   .gallery-caption b { font-family: var(--font-display); font-size: 20px; color: var(--gold-2); font-weight: 500; }
+  .gallery-cta-card {
+    height: clamp(340px, 58vh, 580px);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(200, 164, 93, .14), transparent 60%);
+    display: flex; flex-direction: column; justify-content: center; gap: 16px;
+    padding: clamp(28px, 4vw, 48px);
+  }
+  .gallery-cta-card .g-eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-2); }
+  .gallery-cta-card h3 { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); font-weight: 500; color: var(--white); line-height: 1.2; margin: 0; }
+  .gallery-cta-card p { font-size: 14px; color: var(--muted-dark); max-width: 40ch; margin: 0; }
+  .gallery-cta-card .btn { align-self: flex-start; margin-top: 6px; }
   .gallery-progress {
     height: 1px; background: rgba(255, 255, 255, .12);
     margin: clamp(36px, 5vw, 56px) clamp(18px, 4vw, 64px) 0;
@@ -686,7 +710,10 @@
   }
   .field input::placeholder, .field textarea::placeholder { color: rgba(255, 255, 255, .42); }
   .form .btn { width: 100%; padding: 18px; }
-  .form-note { font-size: 11.5px; color: rgba(255, 255, 255, .4); text-align: center; margin-top: 4px; }
+  .form-consent { display: flex; align-items: flex-start; gap: 9px; font-size: 12.5px; color: rgba(255, 255, 255, .55); line-height: 1.5; cursor: pointer; }
+  .form-consent input { margin-top: 3px; width: 15px; height: 15px; flex-shrink: 0; accent-color: var(--gold); cursor: pointer; }
+  .form-consent a { color: var(--gold-2); text-decoration: underline; }
+  .form-consent a:hover { color: var(--gold); }
 
   /* ============ FOOTER ============ */
   footer {
@@ -700,6 +727,8 @@
   }
   .footer-grid .brand-text { color: var(--white); }
   footer .disclaimer { max-width: 520px; line-height: 1.6; }
+  .footer-grid a { color: var(--gold-2); text-decoration: none; }
+  .footer-grid a:hover { text-decoration: underline; }
 
   /* ============ FLOATING WA ============ */
   .wa-float {
@@ -790,7 +819,7 @@
     body { font-size: 15px; }
     .brand-text small { display: none; }
     .hero-inner { padding-top: 120px; }
-    .hero h1 { font-size: clamp(40px, 12.5vw, 58px); }
+    .hero h1 { font-size: clamp(28px, 9vw, 58px); white-space: nowrap; }
     .hero-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 42px auto 20px; }
     .hero-fact { padding: 18px 12px 22px 0; }
     .hero-fact:nth-child(2n) { border-right: 0; }
@@ -901,8 +930,8 @@
     <div>
       <div class="hero-inner">
         <span class="eyebrow" data-hero-fade>Жилой комплекс · Гагра</span>
-        <h1 id="heroTitle">Инал Принц <em>Тауэр</em></h1>
-        <p class="hero-sub" data-hero-fade>Современная архитектура на улице Абазгаа: графитовый фасад, панорамное остекление и торговая галерея на первом этаже.</p>
+        <h1 id="heroTitle">Инал Принц Тауэр</h1>
+        <p class="hero-sub" data-hero-fade>Графитовый фасад, панорамное остекление и торговая галерея на первом этаже.</p>
         <div class="hero-actions" data-hero-fade>
           <a class="btn btn-primary" href="#plans" data-scroll>Выбрать планировку</a>
           <a class="btn btn-ghost" href="#walk" data-scroll>Смотреть прогулку</a>
@@ -934,13 +963,13 @@
       <div class="section-head">
         <span class="eyebrow">01 · О проекте</span>
         <h2 data-split>Архитектура, которой Гагре не хватало</h2>
-        <p class="lead" data-reveal>Камерный дом на шесть этажей: строгий графитовый объём на светлом основании, глубокие балконы, собственный паркинг и стекло от пола до потолка.</p>
+        <p class="lead" data-reveal>Шесть этажей: графитовый объём на светлом основании, глубокие балконы, паркинг и панорамное остекление.</p>
       </div>
       <div class="about-grid">
         <div class="about-copy" data-reveal>
-          <p><strong>Инал Принц Тауэр</strong> — камерный жилой комплекс в застройке улицы Абазгаа. Первый этаж отдан под коммерческую галерею: кофейня, цветы и магазины формируют собственную городскую среду прямо у входной группы.</p>
-          <p>Верхние жилые уровни получают панорамное остекление и просторные балконы с видами на горы. Фасад комбинирует тёмный графит и светлый камень — дом выглядит современно, но не спорит с окружением.</p>
-          <p>Материалы сайта основаны на архитектурном альбоме проекта. Площади, цены и условия покупки менеджер уточняет индивидуально по заявке.</p>
+          <p><strong>Инал Принц Тауэр</strong> — камерный жилой комплекс на улице Абазгаа. Первый этаж — коммерческая галерея: кофейня, цветы, магазины у входа.</p>
+          <p>Жилые этажи — панорамное остекление и просторные балконы с видом на горы. Фасад сочетает тёмный графит и светлый камень.</p>
+          <p>Сайт основан на архитектурном альбоме проекта. Площади и цены — по заявке у менеджера.</p>
           <div class="kv">
             <div><span>Адрес</span><strong>г. Гагра, ул. Абазгаа, 49</strong></div>
             <div><span>Девелопер</span><strong>ООО «Инал Принц Тауэр»</strong></div>
@@ -952,7 +981,7 @@
           <div class="frame"><img src="photo-front.jpg" alt="Фасад жилого комплекса Инал Принц Тауэр" data-parallax-img /></div>
           <div class="about-badge">
             <strong>1-й этаж</strong>
-            <span>торговая галерея: кофейня, цветочный и магазины у самого дома</span>
+            <span>кофейня, цветочный и магазины у дома</span>
           </div>
         </div>
       </div>
@@ -966,37 +995,37 @@
           <article class="adv-card" data-reveal>
             <div class="adv-ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 16V8h3.5a2.5 2.5 0 0 1 0 5H9"/></svg></div>
             <h4>Собственный паркинг</h4>
-            <p>Наземные машиноместа во дворе и закрытый подземный уровень с въездной рампой — автомобиль всегда рядом с домом.</p>
+            <p>Машиноместа во дворе и закрытый подземный уровень с рампой.</p>
             <span class="adv-tag">Наземный + подземный</span>
           </article>
           <article class="adv-card" data-reveal>
             <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 15c1.5 0 1.5 1.5 3 1.5S8.5 15 10 15s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5"/><path d="M3 19c1.5 0 1.5 1.5 3 1.5S8.5 19 10 19s1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5"/><circle cx="17" cy="6" r="3"/></svg></div>
             <h4>Море и горы рядом</h4>
-            <p>Курортная Гагра: до пляжа и набережной — минуты, с верхних этажей и балконов открываются виды на зелёные склоны Кавказа.</p>
+            <p>До пляжа и набережной — минуты. С верхних этажей — виды на горы Кавказа.</p>
             <span class="adv-tag">Локация у моря</span>
           </article>
           <article class="adv-card" data-reveal>
             <div class="adv-ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M12 3v18"/></svg></div>
             <h4>Панорамное остекление</h4>
-            <p>Стекло от пола до потолка и глубокие балконы: в квартирах максимум света, воздуха и морского горизонта в кадре.</p>
+            <p>Стекло от пола до потолка и глубокие балконы — максимум света и вида на горизонт.</p>
             <span class="adv-tag">Свет и виды</span>
           </article>
           <article class="adv-card" data-reveal>
             <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M4 9l1-4h14l1 4"/><path d="M4 9v11h16V9"/><path d="M4 9a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0"/><path d="M10 20v-5h4v5"/></svg></div>
             <h4>Инфраструктура в доме</h4>
-            <p>Торговая галерея на первом этаже: кофейня, цветы и магазины у входа. За кофе и продуктами не нужно выходить со двора.</p>
+            <p>Кофейня, цветы и магазины на первом этаже — не нужно выходить со двора.</p>
             <span class="adv-tag">Коммерция на 1 этаже</span>
           </article>
           <article class="adv-card" data-reveal>
             <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M9 20V6M14 20v-8M19 20V4"/><path d="M3 20h18"/></svg></div>
             <h4>Инвестиция у моря</h4>
-            <p>Ликвидный формат в растущем курорте: квартиру можно сдавать посуточно в сезон или держать как актив с потенциалом роста цены.</p>
+            <p>Растущий курорт: сдавайте посуточно в сезон или держите как актив на рост.</p>
             <span class="adv-tag">Доход от аренды</span>
           </article>
           <article class="adv-card" data-reveal>
             <div class="adv-ic"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
             <h4>Камерный формат</h4>
-            <p>Всего 6 этажей и по 4 квартиры на этаже — меньше соседей, тише двор и больше приватности, чем в многоэтажных ЖК.</p>
+            <p>6 этажей, 4 квартиры на этаже — меньше соседей, больше приватности.</p>
             <span class="adv-tag">Приватность</span>
           </article>
         </div>
@@ -1010,12 +1039,12 @@
       <div class="section-head">
         <span class="eyebrow">02 · Прогулка</span>
         <h2 data-split style="color:var(--white)">Пройдите вокруг дома взглядом</h2>
-        <p class="lead" data-reveal>Реальные рендеры проекта сменяют друг друга по ходу прокрутки — фасад, вход и балконы, как медленная прогулка вокруг здания.</p>
+        <p class="lead" data-reveal>Фасад, вход и балконы — прогулка вокруг дома по ходу прокрутки.</p>
       </div>
     </div>
     <div class="walk-pin" data-walk data-cursor="Листайте">
       <div class="walk-frame">
-        <img src="photo-aerial.jpg" alt="Дом с высоты — среди старой застройки Гагры" data-walk-img />
+        <img src="photo-wide.jpg" alt="Дом среди старой застройки Гагры" data-walk-img />
         <img src="photo-corner-green.jpg" alt="Угол дома и торговая галерея Flowers Coffee House" data-walk-img />
         <img src="photo-facade-dark.jpg" alt="Графитовый фасад и панорамное остекление" data-walk-img />
         <img src="photo-balcony-tree.jpg" alt="Глубокие балконы с видом на зелень" data-walk-img />
@@ -1024,19 +1053,19 @@
       <div class="walk-copy">
         <div class="walk-stage" data-walk-stage>
           <h3>Дом среди старой Гагры</h3>
-          <p>Шесть этажей на улице Абазгаа — рядом с исторической застройкой района, в пешей доступности от моря.</p>
+          <p>Шесть этажей на Абазгаа — рядом со старой застройкой, в пешей доступности от моря.</p>
         </div>
         <div class="walk-stage" data-walk-stage>
           <h3>Торговая галерея у входа</h3>
-          <p>Flowers + Coffee House на первом этаже — кофе и цветы прямо у подъезда, без выхода со двора.</p>
+          <p>Flowers + Coffee House на первом этаже — кофе и цветы у подъезда.</p>
         </div>
         <div class="walk-stage" data-walk-stage>
           <h3>Графитовый фасад</h3>
-          <p>Тёмный графит и светлый камень, панорамное остекление от пола до потолка на каждом этаже.</p>
+          <p>Тёмный графит и светлый камень, остекление от пола до потолка.</p>
         </div>
         <div class="walk-stage" data-walk-stage>
           <h3>Балконы с видом на горы</h3>
-          <p>Глубокие закруглённые балконы — свой воздух и вид на зелёные склоны Кавказа.</p>
+          <p>Глубокие балконы — вид на зелёные склоны Кавказа.</p>
         </div>
       </div>
       <div class="walk-progress" data-walk-progress>
@@ -1050,7 +1079,7 @@
     <div class="wrap">
       <div class="section-head">
         <span class="eyebrow">03 · Галерея</span>
-        <h2 data-split style="color:var(--white)">Дом в реальных рендерах проекта</h2>
+        <h2 data-split style="color:var(--white)">Реальные рендеры дома</h2>
       </div>
     </div>
     <div class="gallery-pin" id="galleryPin">
@@ -1071,10 +1100,12 @@
           <div class="g-frame"><img src="photo-texture.jpg" alt="Фактура графитового фасада крупным планом" loading="lazy" data-lightbox data-title="Фактура фасада" /></div>
           <figcaption class="gallery-caption"><b>04</b> Фактура фасада</figcaption>
         </figure>
-        <figure class="gallery-card" data-cursor="Смотреть">
-          <div class="g-frame"><img src="photo-wide.jpg" alt="Дом целиком в застройке улицы Абазгаа" loading="lazy" data-lightbox data-title="Дом в застройке улицы" /></div>
-          <figcaption class="gallery-caption"><b>05</b> Дом в застройке улицы</figcaption>
-        </figure>
+        <div class="gallery-card gallery-cta-card" data-cursor="Открыть">
+          <span class="g-eyebrow">05 · Интерактив</span>
+          <h3>Ваш дом в 3D проекции</h3>
+          <p>Покрутите здание и поднимитесь по этажам в интерактивной 3D-модели дома.</p>
+          <a class="btn btn-ghost" href="https://claude.ai/code/artifact/174d4fed-4780-44a4-bee8-388f864ee29e" target="_blank" rel="noopener">Смотреть 3D-модель ↗</a>
+        </div>
       </div>
       <div class="gallery-progress"><span id="galleryBar"></span></div>
     </div>
@@ -1086,7 +1117,7 @@
       <div class="section-head">
         <span class="eyebrow">04 · Планировки</span>
         <h2 data-split>Выберите свой этаж</h2>
-        <p class="lead" data-reveal>Поэтажные планы из архитектурного альбома. Площади и стоимость квартир — по запросу у менеджера.</p>
+        <p class="lead" data-reveal>Поэтажные планы из альбома проекта. Площади и цены — по запросу.</p>
       </div>
       <div class="plans-grid">
         <div data-reveal>
@@ -1122,7 +1153,7 @@
               <span class="f-arrow">→</span>
             </button>
           </div>
-          <p class="plans-note">На сайте показаны планы из проектной документации. Актуальные площади, наличие и цены уточняйте у отдела продаж — оставьте заявку, и менеджер пришлёт подробный каталог в WhatsApp.</p>
+          <p class="plans-note">Планы — из проектной документации. Актуальные площади и цены — оставьте заявку, пришлём каталог в WhatsApp.</p>
         </div>
         <div class="plan-stage" data-reveal>
           <img id="planImage" src="plan-floor-02.png" alt="План второго этажа" data-lightbox data-title="2 этаж — квартиры" />
@@ -1141,32 +1172,32 @@
       <div class="section-head">
         <span class="eyebrow">05 · Локация</span>
         <h2 data-split style="color:var(--white)">Гагра. Улица Абазгаа</h2>
-        <p class="lead" data-reveal>Курортный город между морем и горами — и адрес, где городская жизнь всегда рядом.</p>
+        <p class="lead" data-reveal>Курортный город у моря и гор — с городской жизнью рядом.</p>
       </div>
       <div class="loc-grid">
         <div class="loc-card" data-reveal>
           <span class="loc-num">/ 01</span>
           <h3>Море Гагры</h3>
-          <p>Пляжи и набережная курортной Гагры — часть повседневного маршрута жителей района Абазгаа.</p>
+          <p>Пляжи и набережная Гагры — в шаговой доступности.</p>
         </div>
         <div class="loc-card" data-reveal>
           <span class="loc-num">/ 02</span>
           <h3>Горы в окнах</h3>
-          <p>С верхних этажей и балконов открываются виды на зелёные склоны Кавказских гор.</p>
+          <p>С верхних этажей и балконов — вид на склоны Кавказа.</p>
         </div>
         <div class="loc-card" data-reveal>
           <span class="loc-num">/ 03</span>
           <h3>Городская инфраструктура</h3>
-          <p>Абазгаа — одна из главных улиц Новой Гагры: магазины, кафе и сервисы в пешей доступности.</p>
+          <p>Абазгаа — одна из главных улиц Новой Гагры, всё нужное рядом.</p>
         </div>
         <div class="loc-card" data-reveal>
           <span class="loc-num">/ 04</span>
           <h3>Коммерция в доме</h3>
-          <p>Собственная торговая галерея на первом этаже: за кофе и продуктами не нужно выходить из двора.</p>
+          <p>Торговая галерея на первом этаже — кофе и продукты рядом.</p>
         </div>
       </div>
       <div class="loc-cta" data-reveal>
-        <p class="display">Хотите увидеть район и дом вживую? <em>Запишитесь на показ</em> — менеджер встретит вас на объекте.</p>
+        <p class="display">Хотите увидеть дом вживую? <em>Запишитесь на показ</em>.</p>
         <a class="btn btn-primary" href="#contacts" data-scroll>Записаться на показ</a>
       </div>
     </div>
@@ -1179,7 +1210,7 @@
         <div class="contact-info" data-reveal>
           <span class="eyebrow">06 · Контакты</span>
           <h2>Оставьте заявку — ответим в WhatsApp</h2>
-          <p>Расскажите, какая квартира вас интересует. Менеджер пришлёт планировки, цены и условия покупки, а при желании — запишет на показ.</p>
+          <p>Расскажите, что вас интересует — пришлём планировки, цены и запишем на показ.</p>
           <div class="contact-kv">
             <div><span>Адрес</span>г. Гагра, ул. Абазгаа, 49</div>
             <div><span>Девелопер</span>ООО «Инал Принц Тауэр»</div>
@@ -1188,13 +1219,13 @@
         </div>
         <form class="form-card" id="leadForm" data-reveal>
           <h3>Заявка на подбор квартиры</h3>
-          <p>Заполните форму — текст сообщения сформируется автоматически и откроется в WhatsApp.</p>
+          <p>Форма откроется в WhatsApp автоматически.</p>
           <div class="form">
             <div class="field"><input type="text" name="name" placeholder="Ваше имя" autocomplete="name" /></div>
             <div class="field"><input type="tel" name="phone" placeholder="Телефон или @telegram" autocomplete="tel" /></div>
             <div class="field"><textarea name="message" placeholder="Что вас интересует? Например: 2-комнатная на 5–6 этаже"></textarea></div>
+            <label class="form-consent"><input type="checkbox" name="consent" id="consentCheck" required /><span>Я согласен(на) на <a href="/privacy-policy.html" target="_blank" rel="noopener noreferrer">обработку персональных данных</a></span></label>
             <button class="btn btn-primary" type="submit">Отправить в WhatsApp</button>
-            <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
           </div>
         </form>
       </div>
@@ -1208,8 +1239,8 @@
       <span class="brand-mark">IP</span>
       <span class="brand-text">Инал Принц Тауэр</span>
     </a>
-    <p class="disclaimer">Сайт носит информационный характер и не является публичной офертой. Характеристики, площади и цены уточняйте у отдела продаж.</p>
-    <span>© <span id="year">2026</span> ООО «Инал Принц Тауэр»</span>
+    <p class="disclaimer">Сайт носит информационный характер, не является офертой. Уточняйте у отдела продаж.</p>
+    <span>© <span id="year">2026</span> ООО «Инал Принц Тауэр» · <a href="/privacy-policy.html">Политика обработки персональных данных</a></span>
   </div>
 </footer>
 
@@ -1475,11 +1506,14 @@
       gsap.set(wImgs[0], { opacity: 1 });
       gsap.set(wStages[0], { opacity: 1, y: 0 });
 
+      var lastZoomDuration = 0.45;
+      var walkTimelineTotal = (segments - 1) + lastZoomDuration;
+
       var walkTl = gsap.timeline({
         scrollTrigger: {
           trigger: walkPin,
           start: 'top top',
-          end: function () { return '+=' + Math.round(window.innerHeight * (segments - 1) * 1.15); },
+          end: function () { return '+=' + Math.round(window.innerHeight * walkTimelineTotal); },
           pin: true,
           scrub: 0.7,
           invalidateOnRefresh: true,
@@ -1491,7 +1525,8 @@
       });
 
       for (var wi = 0; wi < segments; wi++) {
-        walkTl.to(wImgs[wi], { scale: 1.09, duration: 1, ease: 'none' }, wi);
+        var isLastWalkImg = wi === segments - 1;
+        walkTl.to(wImgs[wi], { scale: 1.09, duration: isLastWalkImg ? lastZoomDuration : 1, ease: 'none' }, wi);
         if (wi > 0) {
           walkTl
             .to(wImgs[wi - 1], { opacity: 0, duration: 0.32 }, wi - 0.16)
